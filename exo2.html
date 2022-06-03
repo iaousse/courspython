@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essayez-vous-même! &#8212; Cours Introduction à Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les types de données composites" href="content3.html" />
+    <link rel="prev" title="Instructions conditionnelles et boucles" href="ch2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cours Introduction à Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction à Python
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content0.html">
+   Avant de commencer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch00.html">
+     Informations préliminaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch01.html">
+     Interpréteur Python, IPython, et notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content1.html">
+   Les éléments de base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo1.html">
+     Essayez-vous-même !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="content2.html">
+   Instructions composées
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch2.html">
+     Instructions conditionnelles et boucles
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Essayez-vous-même!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content3.html">
+   Les types de données composites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch3.html">
+     Les chaînes de caractères (strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch4.html">
+     Manipulation des listes et tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch5.html">
+     Manipulation des dictionnaires (dictionnaries) et ensembles (sets)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo3.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content4.html">
+   Les fonctions et les modules:
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch6.html">
+     Les fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch7.html">
+     Les modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo4.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content5.html">
+   Gestion des exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch8.html">
+     Les execptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo5.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/exo2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexo2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=lab/tree/docs/exo2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="lancement Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-1">
+   Exercice 1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2">
+   Exercice 2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-3">
+   Exercice 3.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-4">
+   Exercice 4.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-5">
+   Exercice 5.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-6">
+   Exercice 6.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-7">
+   Exercice 7.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-8">
+   Exercice 8.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="essayez-vous-meme">
+<h1>Essayez-vous-même!<a class="headerlink" href="#essayez-vous-meme" title="Lien permanent vers ce titre">¶</a></h1>
+<hr style="border:2px solid gray"> </hr>
+<div class="section" id="exercice-1">
+<h2>Exercice 1.<a class="headerlink" href="#exercice-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ecrire un programme qui permet de résoudre l’équation suivante :</p>
+<div class="math notranslate nohighlight">
+\[
+ax+b=0
+\]</div>
+<ul class="simple">
+<li><p>Le programme doit demander à l’utilisateur les paramètres a et b (pas la peine de contrôler le type des paramètres)</p></li>
+<li><p>Le programme doit afficher le résultat de la manière la plus sophistiquée possible.</p></li>
+</ul>
+<p><em>indication</em> :</p>
+<ul class="simple">
+<li><p><em>convertir les données entrées au type de données adéquat</em>.</p></li>
+<li><p>utiliser les instructions conditionnelles (faite une recherche sur la solution de l’équation <span class="math notranslate nohighlight">\(ax+b=0\)</span>).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-2">
+<h2>Exercice 2.<a class="headerlink" href="#exercice-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ecrire un programme qui demande aux étudiant d’entrer les notes des modules suivants : math, informatique, français. Le programme doit afficher les éléments suivants :</p>
+<ul class="simple">
+<li><p>si les modules sont valides (note supérieure à 10).</p></li>
+<li><p>la moyenne des trois modules (moyenne = .5<em>note_de_math + .4</em>note_informatique + .1*note_francais)</p></li>
+<li><p>excellent si la moyenne dépasse 18, très bien si la moyenne entre 16 et 18, bien si la moyenne entre 12 et 16, passable si la moyenne entre 10 et 12, non valide sinon.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-3">
+<h2>Exercice 3.<a class="headerlink" href="#exercice-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une fonction qui permet de calculer la somme des éléments d’une liste (et d’autre objets que nous allons voir) est <code class="docutils literal notranslate"><span class="pre">sum()</span></code>. La syntaxe est <code class="docutils literal notranslate"><span class="pre">sum(liste)</span></code> tout simplement. Voici une liste pour calculer la somme de ses éléments : <code class="docutils literal notranslate"><span class="pre">ma_liste</span> <span class="pre">=</span> <span class="pre">[</span> <span class="pre">1,</span> <span class="pre">5,</span> <span class="pre">18181,</span> <span class="pre">55,</span> <span class="pre">100]</span></code></p>
+<ul class="simple">
+<li><p>créer un variable <code class="docutils literal notranslate"><span class="pre">somme_avec_sum</span></code> qui va contenir la somme des éléments de la liste avec la fonction <code class="docutils literal notranslate"><span class="pre">sum()</span></code></p></li>
+<li><p>créer une variable <code class="docutils literal notranslate"><span class="pre">somme_avec_for</span></code> qui va contenir la somme des éléments de la liste en utilisant la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p></li>
+<li><p>créer une variable <code class="docutils literal notranslate"><span class="pre">test_somme</span></code> qui va contenir le test d’égalité des deux variables <code class="docutils literal notranslate"><span class="pre">somme_avec_sum</span></code> et <code class="docutils literal notranslate"><span class="pre">somme_avec_for</span></code>.</p></li>
+<li><p>afficher chaque variable.</p></li>
+</ul>
+<p><em>note</em>: vous devez avoir True pour <code class="docutils literal notranslate"><span class="pre">test_somme</span></code> sinon vous avez mal calculé de <code class="docutils literal notranslate"><span class="pre">somme_avec_for</span></code>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+<span class="c1">#ma_liste = [ 1, 5, 18181, 55, 100]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-4">
+<h2>Exercice 4.<a class="headerlink" href="#exercice-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ecrire un programme qui permet d’afficher les 20 premiers nombres multiples de 3 avec <code class="docutils literal notranslate"><span class="pre">while</span></code></p>
+<p>Refaire le programme précédant avec la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-5">
+<h2>Exercice 5.<a class="headerlink" href="#exercice-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ecrire un programme qui permet d’afficher le modèle suivant à l’aide d’une boucle :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> 
+<span class="mi">1</span> <span class="mi">2</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> 
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-6">
+<h2>Exercice 6.<a class="headerlink" href="#exercice-6" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La suite de Fibonacci est une suite de nombres. On calcule les éléments de cette suite de la manière suivante :</p>
+<ul class="simple">
+<li><p>Les deux premiers chiffres sont 0 et 1 ;</p></li>
+<li><p>un élément de la suite est calculer en additionnant les deux nombres qui le précèdent.
+Par exemple, 0, 1 (les deux premières éléments), 1 (obtenu par 0+1), 2 (obtenu par 1+1), 3 (obtenu par 1+2), 5, 8, 13.
+Le nombre suivant dans cette suite est : 8+13 = 21. Et ainsi de suite.</p></li>
+</ul>
+<p>Calculer les 12 premiers éléments de cette suite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-7">
+<h2>Exercice 7.<a class="headerlink" href="#exercice-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Ecrire un programme qui permet d’inverser un nombre entier donné (par exemple : inverser le nombre 89457 revient à donner le nombre 75498).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-8">
+<h2>Exercice 8.<a class="headerlink" href="#exercice-8" title="Lien permanent vers ce titre">¶</a></h2>
+<p>(<strong>Can you find the secret number?</strong>)</p>
+<p>Ecrire un programme qui implémente le jeu suivant :</p>
+<ul class="simple">
+<li><p>décider un nombre secret (par exemple 24) ;</p></li>
+<li><p>Afficher un message du bienvenu au jeu qui détaille les règles du jeu (par exemple « bienvenu a notre jeu », …)</p></li>
+<li><p>vous dites au joueur qu’il a 4 tentatives de jeu</p></li>
+<li><p>vous demander au joueur d’entrer un nombre</p></li>
+<li><p>si le nombre entre est inférieur au nombre secret, vous afficher un message disant que le nombre entre est plus petit que le nombre secret</p></li>
+<li><p>si le nombre entre est supérieure nombre secret, vous afficher un message disant que le nombre entre est plus grands que le nombre secret</p></li>
+<li><p>après chaque tentative, afficher un message disant au joueur qu’il reste moins de tentative (exemple : après la première tentative incorrecte vous afficher qu’il reste 3 tentatives seulement)</p></li>
+<li><p>après la tentative correcte afficher un message de félicitations</p></li>
+<li><p>après 4 tentatives incorrectes afficher un message de regret et le nombre qui doit être ….</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ch2.html" title="previous page">Instructions conditionnelles et boucles</a>
+    <a class='right-next' id="next-link" href="content3.html" title="next page">Les types de données composites</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Par Iaousse M'barek<br/>
+        
+            &copy; droits d'auteur 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
