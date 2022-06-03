@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructions conditionnelles et boucles &#8212; Cours Introduction à Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Essayez-vous-même!" href="exo2.html" />
+    <link rel="prev" title="Instructions composées" href="content2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cours Introduction à Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction à Python
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content0.html">
+   Avant de commencer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch00.html">
+     Informations préliminaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch01.html">
+     Interpréteur Python, IPython, et notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content1.html">
+   Les éléments de base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo1.html">
+     Essayez-vous-même !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="content2.html">
+   Instructions composées
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Instructions conditionnelles et boucles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo2.html">
+     Essayez-vous-même!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content3.html">
+   Les types de données composites
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch3.html">
+     Les chaînes de caractères (strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch4.html">
+     Manipulation des listes et tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch5.html">
+     Manipulation des dictionnaires (dictionnaries) et ensembles (sets)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo3.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content4.html">
+   Les fonctions et les modules:
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch6.html">
+     Les fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch7.html">
+     Les modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo4.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content5.html">
+   Gestion des exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch8.html">
+     Les execptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo5.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ch2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=lab/tree/docs/ch2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="lancement Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions-conditionnelles-tests">
+   Instructions conditionnelles (tests)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#les-boucles">
+   Les Boucles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-boucles-bornees">
+     Les boucles bornées
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#les-boucles-non-bornees">
+     Les boucles non bornées
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="instructions-conditionnelles-et-boucles">
+<h1>Instructions conditionnelles et boucles<a class="headerlink" href="#instructions-conditionnelles-et-boucles" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="instructions-conditionnelles-tests">
+<h2>Instructions conditionnelles (tests)<a class="headerlink" href="#instructions-conditionnelles-tests" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En Python, il existe trois structures de test :</p>
+<ul class="simple">
+<li><p>La première est la plus simple contenant juste <code class="docutils literal notranslate"><span class="pre">if</span></code> :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">instructions</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>La deuxième fait apparaitre <code class="docutils literal notranslate"><span class="pre">else</span></code> :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">instructions_1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">instructions_2</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>La dernière fait apparaitre <code class="docutils literal notranslate"><span class="pre">elif</span></code> :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition_1</span><span class="p">:</span>
+    <span class="n">Bloc</span> <span class="n">d</span><span class="s1">&#39;instructions 1</span>
+<span class="k">elif</span> <span class="n">condition_2</span><span class="p">:</span>
+    <span class="n">Bloc</span> <span class="n">d</span><span class="s1">&#39;instructions 2</span>
+<span class="k">elif</span> <span class="n">condition_3</span><span class="p">:</span>
+    <span class="n">Bloc</span> <span class="n">d</span><span class="s1">&#39;instructions 3</span>
+<span class="o">...</span>
+<span class="k">elif</span> <span class="n">condition_n</span><span class="p">:</span>
+    <span class="n">Bloc</span> <span class="n">d</span><span class="s1">&#39;instructions n</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">Bloc</span> <span class="n">d</span><span class="s1">&#39;instructions n+1</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>pour la structure simple <code class="docutils literal notranslate"><span class="pre">if</span></code>: si  la condition est vrai, le bloc d’instructions en dessous est exécuté. Sinon, il ne sera pas exécuté.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># la condition est x&lt;15</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est plus petit que 15&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 est plus petit que 15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># la condition est x==15</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est egale a 15&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Pour la structure <code class="docutils literal notranslate"><span class="pre">if...else</span></code> : si la condition de <code class="docutils literal notranslate"><span class="pre">if</span></code> est vrai, le bloc d’instructions en dessous de <code class="docutils literal notranslate"><span class="pre">if</span></code> sera exécuté. Sinon, le bloc en dessous de <code class="docutils literal notranslate"><span class="pre">else</span></code> sera exécuté.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># la condition est x&lt;10</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est plus grand que 10&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est plus petit ou égale à 10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 est plus petit ou égale à 10
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Pour la structure ‘if…elif…..else<code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">si</span>&#160; <span class="pre">la</span> <span class="pre">condition</span> <span class="pre">de</span> <span class="pre">if</span> <span class="pre">est</span> <span class="pre">vrai,</span> <span class="pre">le</span> <span class="pre">bloc</span> <span class="pre">d'instructions</span> <span class="pre">en</span> <span class="pre">dessous</span> <span class="pre">de</span> </code>if<code class="docutils literal notranslate"><span class="pre">sera</span> <span class="pre">exécuté.</span> <span class="pre">Sinon,</span> <span class="pre">si</span> <span class="pre">le</span> <span class="pre">bloc</span> <span class="pre">de</span></code>elif<code class="docutils literal notranslate"><span class="pre">est</span> <span class="pre">vrai</span> <span class="pre">le</span> <span class="pre">bloc</span> <span class="pre">en</span> <span class="pre">dessous</span> <span class="pre">de</span></code>elif<code class="docutils literal notranslate"><span class="pre">sera</span> <span class="pre">exécuté….</span> <span class="pre">Sinon,</span> <span class="pre">si</span> <span class="pre">le</span> <span class="pre">bloc</span> <span class="pre">de</span></code>else<code class="docutils literal notranslate"><span class="pre">est</span> <span class="pre">vrai</span> <span class="pre">le</span> <span class="pre">bloc</span> <span class="pre">en</span> <span class="pre">dessous</span> <span class="pre">de</span></code>else` sera exécuté.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="c1"># la condition est x&gt;10</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est plus grand que 10&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est plus petit ou égale à 10&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est égale à 10&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 est égale à 10
+</pre></div>
+</div>
+</div>
+</div>
+<p>On peut également avoir une structure de test au sien d’une autre structure de test. Aussi, les conditions peuvent être composé de plusieurs conditions à l’aide des opérateurs logiques (<code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, et <code class="docutils literal notranslate"><span class="pre">not</span></code>).</p>
+<p>Explorer le code ci-dessous est essayer de savoir son output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="c1"># les conditions</span>
+<span class="n">condition1</span> <span class="o">=</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">condition2</span> <span class="o">=</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">9</span><span class="p">;</span> <span class="n">condition3</span><span class="o">=</span> <span class="n">x</span><span class="o">==</span><span class="mi">2</span><span class="p">;</span> <span class="n">condition4</span> <span class="o">=</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span><span class="p">;</span> 
+<span class="n">condition5</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">x</span><span class="o">==</span><span class="mi">7</span><span class="p">);</span> <span class="n">condition6</span> <span class="o">=</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">condition7</span><span class="o">=</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">9</span>
+
+<span class="k">if</span> <span class="n">condition1</span> <span class="ow">and</span> <span class="n">condition2</span><span class="p">:</span>  <span class="c1">## remarquer qu&#39;on a pas besoin de faire condition1==True</span>
+    <span class="k">if</span> <span class="n">condition3</span> <span class="ow">or</span> <span class="n">condition4</span> <span class="ow">or</span> <span class="n">condition5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est premier&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;n&#39;est pas premier&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">condition6</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est négatif&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;est supérieur à 9&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 n&#39;est pas premier
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="les-boucles">
+<h2>Les Boucles<a class="headerlink" href="#les-boucles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsqu’on voulait répéter plusieurs fois l’exécution d’une partie du programme, on utilise les boucles. Il en existe deux types :</p>
+<div class="section" id="les-boucles-bornees">
+<h3>Les boucles bornées<a class="headerlink" href="#les-boucles-bornees" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Elles sont utilisées lorsqu’on a une idée a priori sur le nombre de répétition. Il s’agit de la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> ; la syntaxe de la boucle for est la suivante :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">valeurs_possibles</span><span class="p">:</span>
+    <span class="n">instructions</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>* `var` est le nom d&#39;une variable locale à la fonction `for()` 
+* `valeurs_possibles` un objet comprenant des éléments définissant les valeurs que prendra objet pour chaque itération, 
+*  `instructions` est le bloc d&#39;instructions qui seront exécutées à chaque itération.
+</pre></div>
+</div>
+<p>Voici deux exemples simples de l’utilisation de la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> :</p>
+<ol class="simple">
+<li><p>Calculer le carrée de chaque nombre 1, 2, 3 et 4;</p></li>
+<li><p>Calculer la somme des nombres 1, 2, 3 et 4.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le carré de&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>le carré de 1 est: 1
+le carré de 2 est: 4
+le carré de 3 est: 9
+le carré de 4 est: 16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+    <span class="n">somme</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Une fonction très importante qui est souvent utilisée en Python pour la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code> est la fonction <code class="docutils literal notranslate"><span class="pre">range()</span></code>. Cette fonction prend les arguments suivants :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> : (optionnel, par défaut, 0) valeur de début pour la séquence (inclue) ;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stop</span></code> : valeur de fin de la séquence (<strong>non inclue</strong>) ;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step</span></code> : (optionnel, par défaut 1) le pas.</p></li>
+</ul>
+<p>On peut refaire les exemples suivants comme suit :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;le carré de&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>le carré de 1 est: 1
+le carré de 2 est: 4
+le carré de 3 est: 9
+le carré de 4 est: 16
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">somme</span> <span class="o">+=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rien n’empêche avoir une boucle for dans un bloc d’instructions d’une autre boucle for. Ou encore une instruction conditionnelle dans un bloc de la boucle for (vice versa). Par exemple si on veut calculer le produit de chaque élément de la liste <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">5,</span> <span class="pre">9,</span> <span class="pre">10]</span></code> par chaque élément de la liste <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">5]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le produit de&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;fois&quot;</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="s2">&quot;est:&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">*</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le produit de 1 fois 2 est: 2
+Le produit de 1 fois 3 est: 3
+Le produit de 1 fois 5 est: 5
+Le produit de 5 fois 2 est: 10
+Le produit de 5 fois 3 est: 15
+Le produit de 5 fois 5 est: 25
+Le produit de 9 fois 2 est: 18
+Le produit de 9 fois 3 est: 27
+Le produit de 9 fois 5 est: 45
+Le produit de 10 fois 2 est: 20
+Le produit de 10 fois 3 est: 30
+Le produit de 10 fois 5 est: 50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ou si l’on veut tester la parité de chaque élément entre 3, et 14 <code class="docutils literal notranslate"><span class="pre">(range(3,15)</span></code>);</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==0:
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est pair&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est impair&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le nombre 3 est impair
+Le nombre 4 est pair
+Le nombre 5 est impair
+Le nombre 6 est pair
+Le nombre 7 est impair
+Le nombre 8 est pair
+Le nombre 9 est impair
+Le nombre 10 est pair
+Le nombre 11 est impair
+Le nombre 12 est pair
+Le nombre 13 est impair
+Le nombre 14 est pair
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="les-boucles-non-bornees">
+<h3>Les boucles non bornées<a class="headerlink" href="#les-boucles-non-bornees" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Elles sont utilisées si on ne connait pas à l’avance le nombre de répétitions. Il s’agit de la boucle <code class="docutils literal notranslate"><span class="pre">while</span></code>.
+Le principe d’une boucle <code class="docutils literal notranslate"><span class="pre">while()</span></code> est que les instructions à l’intérieur de la boucle seront répétées tant qu’une condition est respectée. L’idée est de faire dépendre cette condition d’un ou plusieurs objets qui seront modifiés au cours des itérations (sans cela, la boucle tournerait à l’infini).</p>
+<p>La syntaxe est la suivante :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="n">instructions</span>
+</pre></div>
+</div>
+<p>Nous allons illustrer le rôle de chaque boucle dans l’exemple suivant. Supposons que nous voulons calculer le factoriel d’un nombre (soit 10), voici le code pour le calculer :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">fact</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">:</span>
+    <span class="n">fact</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fact</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3628800
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reprenons l’exemple précédant dont on veut tester la parité de chaque élément entre 3, et 14 avec la boucle while:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">15</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==0:
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est pair&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le nombre&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;est impair&quot;</span><span class="p">)</span>
+    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Le nombre 3 est impair
+Le nombre 4 est pair
+Le nombre 5 est impair
+Le nombre 6 est pair
+Le nombre 7 est impair
+Le nombre 8 est pair
+Le nombre 9 est impair
+Le nombre 10 est pair
+Le nombre 11 est impair
+Le nombre 12 est pair
+Le nombre 13 est impair
+Le nombre 14 est pair
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="content2.html" title="previous page">Instructions composées</a>
+    <a class='right-next' id="next-link" href="exo2.html" title="next page">Essayez-vous-même!</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Par Iaousse M'barek<br/>
+        
+            &copy; droits d'auteur 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

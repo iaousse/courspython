@@ -1,0 +1,31 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+- file: content0
+  sections:
+    - file: ch00
+    - file: ch01
+- file: content1
+  sections:
+    - file: ch1
+    - file: exo1
+- file: content2
+  sections:
+    - file: ch2
+    - file: exo2
+- file: content3
+  sections:
+    - file: ch3
+    - file: ch4
+    - file: ch5
+    - file: exo3
+- file: content4
+  sections:
+    - file: ch6
+    - file: ch7
+    - file: exo4
+- file: content5
+  sections:
+    - file: ch8
+    - file: exo5

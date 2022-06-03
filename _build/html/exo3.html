@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essayez vous-meme! &#8212; Cours Introduction à Python</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/translations.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Les fonctions et les modules:" href="content4.html" />
+    <link rel="prev" title="Manipulation des dictionnaires (dictionnaries) et ensembles (sets)" href="ch5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cours Introduction à Python</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Rechercher dans ce livre ..." aria-label="Rechercher dans ce livre ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction à Python
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content0.html">
+   Avant de commencer
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch00.html">
+     Informations préliminaires
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch01.html">
+     Interpréteur Python, IPython, et notebooks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content1.html">
+   Les éléments de base
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch1.html">
+     Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo1.html">
+     Essayez-vous-même !
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content2.html">
+   Instructions composées
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch2.html">
+     Instructions conditionnelles et boucles
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo2.html">
+     Essayez-vous-même!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="content3.html">
+   Les types de données composites
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch3.html">
+     Les chaînes de caractères (strings)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch4.html">
+     Manipulation des listes et tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch5.html">
+     Manipulation des dictionnaires (dictionnaries) et ensembles (sets)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content4.html">
+   Les fonctions et les modules:
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch6.html">
+     Les fonctions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch7.html">
+     Les modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo4.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content5.html">
+   Gestion des exceptions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ch8.html">
+     Les execptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exo5.html">
+     Essayez vous-meme!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Basculer la navigation" aria-controls="site-navigation"
+                title="Basculer la navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Téléchargez cette page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/exo3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Télécharger le fichier source" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimer au format PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Dépôt source"><i
+                    class="fab fa-github"></i>dépôt</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexo3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Ouvrez un problème"><i class="fas fa-lightbulb"></i>signaler un problème</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Mode plein écran"
+        title="Mode plein écran"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=lab/tree/docs/exo3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="lancement Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="lancement Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenu
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-1">
+   Exercice 1.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-2">
+   Exercice 2.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-3">
+   Exercice 3.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-4">
+   Exercice 4.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-5">
+   Exercice 5.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-6">
+   Exercice 6.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-7">
+   Exercice 7.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercice-8">
+   Exercice 8.
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="essayez-vous-meme">
+<h1>Essayez vous-meme!<a class="headerlink" href="#essayez-vous-meme" title="Lien permanent vers ce titre">¶</a></h1>
+<hr style="border:2px solid gray"> </hr>
+<div class="section" id="exercice-1">
+<h2>Exercice 1.<a class="headerlink" href="#exercice-1" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Soit la variable suivante <code class="docutils literal notranslate"><span class="pre">all_alphabet</span> <span class="pre">=</span> <span class="pre">&quot;the</span> <span class="pre">quick</span> <span class="pre">brown</span> <span class="pre">fox</span> <span class="pre">jumps</span> <span class="pre">over</span> <span class="pre">the</span> <span class="pre">lazy</span> <span class="pre">dog&quot;</span></code>.</p>
+<ul class="simple">
+<li><p>afficher les 10 premiers caracteres de cette vaiable (espaces comris)</p></li>
+<li><p>afficher les 5 derniers caracters de cette variable (espaces compris)</p></li>
+<li><p>Déterminez ce qui se passe lorsque l’un ou l’autre des indices de découpage est erroné, et décrivez cela le mieux possible. (Exemple: Si le second indice est plus petit que le premier, ou bien si le second indice est plus grand que la taille de la chaîne. Vous pouvez tester d’autres situations).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-2">
+<h2>Exercice 2.<a class="headerlink" href="#exercice-2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Afficher la phrase suivantes <code class="docutils literal notranslate"><span class="pre">'bonjour</span> <span class="pre">tout</span> <span class="pre">le</span> <span class="pre">monde'</span></code> dans les trois figures suivantes (ajouter les caracters speciaux dans la chaines):</p>
+<ul class="simple">
+<li><p>retour a lingne :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bonjour</span>
+<span class="n">tout</span>
+<span class="n">le</span>
+<span class="n">monde</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>tabulation :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bonjour</span>	<span class="n">tout</span>	<span class="n">le</span>	<span class="n">monde</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>tabulation et retour a la linge :</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bonjour</span>
+    <span class="n">tout</span>
+        <span class="n">le</span>
+            <span class="n">monde</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; &#39;
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-3">
+<h2>Exercice 3.<a class="headerlink" href="#exercice-3" title="Lien permanent vers ce titre">¶</a></h2>
+<p>tester les methodes suivantes a l’aide d’une chaines de caracters contenant des lettres, des chiffres, et des symboles (exemple <code class="docutils literal notranslate"><span class="pre">'my_n&#64;me%is$meth0s!'</span></code>): <code class="docutils literal notranslate"><span class="pre">.isalpha()</span></code> et <code class="docutils literal notranslate"><span class="pre">.isdigit()</span></code> (emple: qui sera l’output de cette instruction: <code class="docutils literal notranslate"><span class="pre">'my_n&#64;me%is$meth0s!'[0].islpha()</span></code>? Faite ca avec d’autres elements de la chaines et affecter la a une variable avant de faire ces tests).</p>
+<p>Compter toutes les lettres, chiffres et symboles spéciaux d’une chaîne donnée</p>
+<p>Exemple:</p>
+<p>Pour la chaine <code class="docutils literal notranslate"><span class="pre">'my_n&#64;me%is$meth0s!'</span></code>:</p>
+<p>Nombre total de caractères, chiffres et symboles</p>
+<p>Caractères = 12</p>
+<p>Chiffres = 1</p>
+<p>Symbole = 5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-4">
+<h2>Exercice 4.<a class="headerlink" href="#exercice-4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>donner plusieurs technique (slincing, boucle for, boucle while, …)d’inverser une chaine de caractere (utiliser la chaine <code class="docutils literal notranslate"><span class="pre">bonjour</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-5">
+<h2>Exercice 5.<a class="headerlink" href="#exercice-5" title="Lien permanent vers ce titre">¶</a></h2>
+<p>A l’aide de <code class="docutils literal notranslate"><span class="pre">'*'</span></code> et la boucle <code class="docutils literal notranslate"><span class="pre">for</span></code>, afficher les trois modèles suivants:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+<span class="o">*****</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">******</span>
+<span class="o">*****</span>
+<span class="o">****</span>
+<span class="o">***</span>
+<span class="o">**</span>
+<span class="o">*</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>     <span class="o">*</span>
+    <span class="o">**</span>
+   <span class="o">***</span>
+  <span class="o">****</span>
+ <span class="o">*****</span>
+<span class="o">******</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-6">
+<h2>Exercice 6.<a class="headerlink" href="#exercice-6" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>Écrire un programme Python pour obtenir le plus petit nombre d’une liste (appliquer le programme sur la liste <code class="docutils literal notranslate"><span class="pre">ma_liste</span> <span class="pre">=[39,</span> <span class="pre">35,</span> <span class="pre">53,</span> <span class="pre">21,</span> <span class="pre">19,</span> <span class="pre">33,</span> <span class="pre">22]</span></code>. Comparer votre resulat avec <code class="docutils literal notranslate"><span class="pre">min(liste)</span></code>.</p></li>
+<li><p>Écrire un programme Python pour obtenir le plus gand nombre d’une liste (appliquer le programme sur la liste <code class="docutils literal notranslate"><span class="pre">ma_liste</span> <span class="pre">=[39,</span> <span class="pre">35,</span> <span class="pre">53,</span> <span class="pre">21,</span> <span class="pre">19,</span> <span class="pre">33,</span> <span class="pre">22]</span></code>. Comparer votre resulat avec <code class="docutils literal notranslate"><span class="pre">max(liste)</span></code>.</p></li>
+<li><p>Écrire un programme Python qui permet a l’utilisateur d’entrer des nombre. Apres vous donner la somme, le max, le min, le produit, et la moyenne de ces nombres (ne pas utiliser les fonctions <code class="docutils literal notranslate"><span class="pre">sum(),</span> <span class="pre">min(),...</span></code>) et qui affiche l’ordre croissant et l’ordre decroissant (ne pas utilise des fonctions et methodes qui permettent que d’ordonner les nombres comme <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> et <code class="docutils literal notranslate"><span class="pre">.sort()</span></code>) .</p></li>
+<li><p>Refaire le meme programme en utilisant les fonctions qui vous convient (<code class="docutils literal notranslate"><span class="pre">sum(),</span> <span class="pre">min()</span></code>,<code class="docutils literal notranslate"><span class="pre">sorted()</span></code> ou <code class="docutils literal notranslate"><span class="pre">.sort()</span></code> etc.).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-7">
+<h2>Exercice 7.<a class="headerlink" href="#exercice-7" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Executer le programme suivant:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="n">var1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="n">var2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Expliquer ce qui c’est passe (faite une petite recherche) et proposer une solution pour remidier a ce probleme.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr style="border:2px solid gray"> </hr>
+</div>
+<div class="section" id="exercice-8">
+<h2>Exercice 8.<a class="headerlink" href="#exercice-8" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La table suivante contient les notes des étudiants d’une classe.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>apogee</p></th>
+<th class="text-align:center head"><p>math</p></th>
+<th class="text-align:center head"><p>python</p></th>
+<th class="text-align:center head"><p>java</p></th>
+<th class="text-align:center head"><p>gestion</p></th>
+<th class="text-align:center head"><p>algorithmique</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>19021549</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>9</p></td>
+<td class="text-align:center"><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>19021547</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>16</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>14</p></td>
+</tr>
+<tr class="row-even"><td><p>19021563</p></td>
+<td class="text-align:center"><p>11</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>19021545</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>17</p></td>
+<td class="text-align:center"><p>16</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>19021553</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>19021559</p></td>
+<td class="text-align:center"><p>11</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>9</p></td>
+<td class="text-align:center"><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>19021557</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>15</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>12</p></td>
+</tr>
+<tr class="row-odd"><td><p>19021550</p></td>
+<td class="text-align:center"><p>8</p></td>
+<td class="text-align:center"><p>-</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>8</p></td>
+<td class="text-align:center"><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>19021548</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>11</p></td>
+<td class="text-align:center"><p>8</p></td>
+<td class="text-align:center"><p>13</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Créer 5 listes et les affecter aux variables <code class="docutils literal notranslate"><span class="pre">apogee</span></code>, <code class="docutils literal notranslate"><span class="pre">math</span></code>, <code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">java</span></code>, <code class="docutils literal notranslate"><span class="pre">gestion</span></code>, <code class="docutils literal notranslate"><span class="pre">algorithmique</span></code> contenant les notes de chaque matière (penser à remplir les éléments manquants par un mot-clé qui montre que les valeurs sont vides).</p></li>
+<li><p>créer les dictionnaires nommes <code class="docutils literal notranslate"><span class="pre">notes_math</span></code>, <code class="docutils literal notranslate"><span class="pre">notes_info</span></code>, et <code class="docutils literal notranslate"><span class="pre">notes_gestion</span></code>.</p></li>
+<li><p>Créer un dictionnaire nomme <code class="docutils literal notranslate"><span class="pre">notes</span></code> contenant les notes des étudiants ;</p></li>
+</ul>
+<p>Pour Les étudiants ayant des notes non saisies, la table suivante contient leurs notes :</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>apogee</p></th>
+<th class="text-align:center head"><p>math</p></th>
+<th class="text-align:center head"><p>python</p></th>
+<th class="text-align:center head"><p>java</p></th>
+<th class="text-align:center head"><p>gestion</p></th>
+<th class="text-align:center head"><p>algorithmique</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>19021549</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>13</p></td>
+<td class="text-align:center"><p>9</p></td>
+<td class="text-align:center"><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>19021559</p></td>
+<td class="text-align:center"><p>11</p></td>
+<td class="text-align:center"><p>14</p></td>
+<td class="text-align:center"><p>12</p></td>
+<td class="text-align:center"><p>9</p></td>
+<td class="text-align:center"><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>19021550</p></td>
+<td class="text-align:center"><p>8</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>10</p></td>
+<td class="text-align:center"><p>8</p></td>
+<td class="text-align:center"><p>12</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>créer un autre dictionnaire vide nomme <code class="docutils literal notranslate"><span class="pre">note_actualisee</span></code>, puis remplir en utilisant les données de la table ci-dessus :</p></li>
+<li><p>Actualiser les notes manquantes dans <code class="docutils literal notranslate"><span class="pre">notes</span></code> en utilisant <code class="docutils literal notranslate"><span class="pre">notes_actualisee</span></code>.</p></li>
+<li><p>L’étudiant ayant le code apogée <code class="docutils literal notranslate"><span class="pre">19021545</span></code> n’appartient pas a cette classe, supprimer le du dictionnaire <code class="docutils literal notranslate"><span class="pre">notes</span></code> ;</p></li>
+<li><p>En utilisant une boucle, calculer :</p>
+<ul>
+<li><p>la note moyenne de la classe en math, et en python</p></li>
+<li><p>la note moyenne de chaque étudiant</p></li>
+</ul>
+</li>
+</ul>
+<p><em>NB: les codes apogées sont fictifs et toute ressemblance avec des étudiants existant ou ayant existé serait purement fortuite.</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Les variables suivantes contiennent les nomes des quelques étudiants (des prénoms sélectionnés aléatoirement dans le monde entier), leur sexe et l’appartenance à l’une des trois classes : <code class="docutils literal notranslate"><span class="pre">classe_a</span></code>, <code class="docutils literal notranslate"><span class="pre">classe_b</span></code> et <code class="docutils literal notranslate"><span class="pre">classe_c</span></code>. Les classes ne sont pas mutuellement exclusives. Ceci dit, un étudiant peut être dans deux, voire trois, classe a la fois.</p>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hommes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jakhi&#39;</span><span class="p">,</span> <span class="s1">&#39;Arjen&#39;</span><span class="p">,</span> <span class="s1">&#39;Davidmichael&#39;</span><span class="p">,</span> <span class="s1">&#39;Albert&#39;</span><span class="p">,</span> <span class="s1">&#39;Staton&#39;</span><span class="p">,</span> <span class="s1">&#39;Konstantinos&#39;</span><span class="p">,</span> <span class="s1">&#39;Rasheen&#39;</span><span class="p">,</span> <span class="s1">&#39;Thalamus&#39;</span><span class="p">,</span> <span class="s1">&#39;Gabryel&#39;</span><span class="p">,</span> <span class="s1">&#39;Ladavian&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;Lendel&#39;</span><span class="p">,</span> <span class="s1">&#39;Sargon&#39;</span><span class="p">,</span> <span class="s1">&#39;Artadius&#39;</span><span class="p">,</span> <span class="s1">&#39;Tyer&#39;</span><span class="p">,</span> <span class="s1">&#39;Ignacio&#39;</span><span class="p">,</span> <span class="s1">&#39;Mckale&#39;</span><span class="p">,</span> <span class="s1">&#39;Jarvin&#39;</span><span class="p">,</span> <span class="s1">&#39;Raydrick&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;Renn&#39;</span><span class="p">,</span> <span class="s1">&#39;Rony&#39;</span><span class="p">,</span> <span class="s1">&#39;Yasine&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">femmes</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Geryl&#39;</span><span class="p">,</span> <span class="s1">&#39;Khamyah&#39;</span><span class="p">,</span> <span class="s1">&#39;Comelia&#39;</span><span class="p">,</span> <span class="s1">&#39;Joneka&#39;</span><span class="p">,</span> <span class="s1">&#39;Teia&#39;</span><span class="p">,</span> <span class="s1">&#39;Sameria&#39;</span><span class="p">,</span> <span class="s1">&#39;Lourinda&#39;</span><span class="p">,</span> <span class="s1">&#39;Martrice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bettianne&#39;</span><span class="p">,</span> <span class="s1">&#39;Blandy&#39;</span><span class="p">,</span> <span class="s1">&#39;Allynn&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;Dashia&#39;</span><span class="p">,</span> <span class="s1">&#39;Neneh&#39;</span><span class="p">,</span> <span class="s1">&#39;Jovanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Valeriana&#39;</span><span class="p">,</span> <span class="s1">&#39;Zhanasia&#39;</span><span class="p">,</span> <span class="s1">&#39;Naiyma&#39;</span><span class="p">,</span> <span class="s1">&#39;Kerrah&#39;</span><span class="p">,</span> <span class="s1">&#39;Ayaa&#39;</span><span class="p">,</span> <span class="s1">&#39;Johanna&#39;</span><span class="p">,</span> <span class="s1">&#39;Tawasha&#39;</span><span class="p">,</span> <span class="s1">&#39;Roxi&#39;</span><span class="p">,</span> 
+          <span class="s1">&#39;Shaughnessy&#39;</span><span class="p">,</span> <span class="s1">&#39;Nyema&#39;</span><span class="p">,</span> <span class="s1">&#39;Janene&#39;</span><span class="p">,</span> <span class="s1">&#39;Diamyn&#39;</span><span class="p">,</span> <span class="s1">&#39;Carly&#39;</span><span class="p">,</span> <span class="s1">&#39;Giner&#39;</span><span class="p">,</span> <span class="s1">&#39;Efthymia&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">classe_a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Geryl&#39;</span><span class="p">,</span> <span class="s1">&#39;Comelia&#39;</span><span class="p">,</span> <span class="s1">&#39;Joneka&#39;</span><span class="p">,</span> <span class="s1">&#39;Lendel&#39;</span><span class="p">,</span> <span class="s1">&#39;Artadius&#39;</span><span class="p">,</span> <span class="s1">&#39;Mckale&#39;</span><span class="p">,</span><span class="s1">&#39;Teia&#39;</span><span class="p">,</span> <span class="s1">&#39;Martrice&#39;</span><span class="p">,</span> <span class="s1">&#39;Allynn&#39;</span><span class="p">,</span> <span class="s1">&#39;Neneh&#39;</span><span class="p">,</span> <span class="s1">&#39;Shaughnessy&#39;</span><span class="p">,</span> <span class="s1">&#39;Diamyn&#39;</span><span class="p">,</span> <span class="s1">&#39;Jakhi&#39;</span><span class="p">,</span> <span class="s1">&#39;Davidmichael&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;Thalamus&#39;</span><span class="p">,</span> <span class="s1">&#39;Ladavian&#39;</span><span class="p">,</span> <span class="s1">&#39;Renn&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">classe_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Geryl&#39;</span><span class="p">,</span> <span class="s1">&#39;Comelia&#39;</span><span class="p">,</span> <span class="s1">&#39;Joneka&#39;</span><span class="p">,</span> <span class="s1">&#39;Teia&#39;</span><span class="p">,</span> <span class="s1">&#39;Martrice&#39;</span><span class="p">,</span> <span class="s1">&#39;Allynn&#39;</span><span class="p">,</span><span class="s1">&#39;Lourinda&#39;</span><span class="p">,</span> <span class="s1">&#39;Bettianne&#39;</span><span class="p">,</span> <span class="s1">&#39;Blandy&#39;</span><span class="p">,</span> <span class="s1">&#39;Jovanka&#39;</span><span class="p">,</span> <span class="s1">&#39;Kerrah&#39;</span><span class="p">,</span> <span class="s1">&#39;Johanna&#39;</span><span class="p">,</span> <span class="s1">&#39;Tawasha&#39;</span><span class="p">,</span> <span class="s1">&#39;Roxi&#39;</span><span class="p">,</span> <span class="s1">&#39;Janene&#39;</span><span class="p">,</span> <span class="s1">&#39;Giner&#39;</span><span class="p">,</span> <span class="s1">&#39;Efthymia&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;Staton&#39;</span><span class="p">,</span> <span class="s1">&#39;Konstantinos&#39;</span><span class="p">,</span> <span class="s1">&#39;Rasheen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sargon&#39;</span><span class="p">,</span> <span class="s1">&#39;Tyer&#39;</span><span class="p">,</span> <span class="s1">&#39;Ignacio&#39;</span><span class="p">,</span> <span class="s1">&#39;Jarvin&#39;</span><span class="p">,</span> <span class="s1">&#39;Yasine&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">classe_c</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Geryl&#39;</span><span class="p">,</span> <span class="s1">&#39;Comelia&#39;</span><span class="p">,</span> <span class="s1">&#39;Joneka&#39;</span><span class="p">,</span> <span class="s1">&#39;Teia&#39;</span><span class="p">,</span> <span class="s1">&#39;Martrice&#39;</span><span class="p">,</span> <span class="s1">&#39;Allynn&#39;</span><span class="p">,</span><span class="s1">&#39;Khamyah&#39;</span><span class="p">,</span> <span class="s1">&#39;Sameria&#39;</span><span class="p">,</span> <span class="s1">&#39;Dashia&#39;</span><span class="p">,</span> <span class="s1">&#39;Valeriana&#39;</span><span class="p">,</span> <span class="s1">&#39;Zhanasia&#39;</span><span class="p">,</span> <span class="s1">&#39;Naiyma&#39;</span><span class="p">,</span> <span class="s1">&#39;Ayaa&#39;</span><span class="p">,</span> <span class="s1">&#39;Nyema&#39;</span><span class="p">,</span> <span class="s1">&#39;Carly&#39;</span><span class="p">,</span> <span class="s1">&#39;Arjen&#39;</span><span class="p">,</span> <span class="s1">&#39;Albert&#39;</span><span class="p">,</span> <span class="s1">&#39;Gabryel&#39;</span><span class="p">,</span> 
+             <span class="s1">&#39;Lendel&#39;</span><span class="p">,</span> <span class="s1">&#39;Artadius&#39;</span><span class="p">,</span> <span class="s1">&#39;Mckale&#39;</span><span class="p">,</span> <span class="s1">&#39;Raydrick&#39;</span><span class="p">,</span> <span class="s1">&#39;Rony&#39;</span><span class="p">,</span> <span class="s1">&#39;Rasheen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sargon&#39;</span><span class="p">,</span> <span class="s1">&#39;Tyer&#39;</span><span class="p">,</span> <span class="s1">&#39;Ignacio&#39;</span><span class="p">,</span> <span class="s1">&#39;Jarvin&#39;</span><span class="p">,</span> <span class="s1">&#39;Yasine&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Copier les ensembles ci-dessus dans la cellule code (ou dans votre éditeur que vous utilisez).</p></li>
+<li><p>Créer un ensemble <code class="docutils literal notranslate"><span class="pre">etudiant</span></code> contenant tous les étudiants.</p></li>
+<li><p>A quelle(s) classe(s) <code class="docutils literal notranslate"><span class="pre">Yassin</span></code> appartient-il ?</p></li>
+<li><p>Quelles sont les étudiants de sexe masculin qui appartiennent à la classe <code class="docutils literal notranslate"><span class="pre">classe_a</span></code> ?</p></li>
+<li><p>Quelles sont les étudiants de sexe féminin qui appartiennent à la classe <code class="docutils literal notranslate"><span class="pre">classe_c</span></code> ?</p></li>
+<li><p>Quelles sont les étudiants de sexe masculin qui appartiennent à la classe <code class="docutils literal notranslate"><span class="pre">classe_a</span></code> et la classe <code class="docutils literal notranslate"><span class="pre">classe_c</span></code> ?</p></li>
+<li><p>Quelles sont les étudiants de sexe féminin qui appartiennent a la classe <code class="docutils literal notranslate"><span class="pre">classe_b</span></code> et n’appartiennent pas à la classe <code class="docutils literal notranslate"><span class="pre">classe_c</span></code> ?</p></li>
+<li><p>L’étudiant <code class="docutils literal notranslate"><span class="pre">Mohamed</span></code> appartient à la classe la classe <code class="docutils literal notranslate"><span class="pre">classe_b</span></code>. Ajouter le aux ensembles adéquats.</p></li>
+<li><p>Utiliser une boucle pour afficher pour chaque étudiantes le message suivant :</p>
+<ul>
+<li><p>Si l’étudiante appartient à la classe <code class="docutils literal notranslate"><span class="pre">classe_c</span></code> : <code class="docutils literal notranslate"> <span class="pre">L'étudiante</span> <span class="pre">'nom'</span> <span class="pre">appartient</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">classe</span> <span class="pre">classe_c</span></code>.</p></li>
+<li><p>Si l’étudiante n’appartient à la classe <code class="docutils literal notranslate"><span class="pre">classe_c</span></code> : <code class="docutils literal notranslate"> <span class="pre">L'étudiante</span> <span class="pre">'nom'</span> <span class="pre">n'appartient</span> <span class="pre">pas</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">classe</span> <span class="pre">classe_c</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## votre code ici</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="ch5.html" title="previous page">Manipulation des dictionnaires (dictionnaries) et ensembles (sets)</a>
+    <a class='right-next' id="next-link" href="content4.html" title="next page">Les fonctions et les modules:</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          Par Iaousse M'barek<br/>
+        
+            &copy; droits d'auteur 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
