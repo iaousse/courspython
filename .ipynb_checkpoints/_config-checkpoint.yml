@@ -22,7 +22,6 @@ sphinx:
   config:
     html_search_language: fr
     language: fr
-    html_show_copyright: false
     
 # Information about where the book exists on the web
 repository:

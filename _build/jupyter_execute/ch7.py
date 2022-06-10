@@ -3,388 +3,152 @@
 
 # # Les modules
 # 
-# ## Dictionnaire (dictionnary)
+# ## Définition
+# Les modules sont des programmes Python qui contiennent des fonctions qui peuvent être réutilisées souvent. Les modules sont aussi dits bibliothèques ou librairies. Les modules peuvent être considérés comme des **boîtes à outils** qui vont être très utiles.
 # 
-# Contrairment au objets construits que nous avons vu (`strings`, `lists`, `tuples`), les dictionnaires (`dictionnary`) sont utilisés pour stocker des valeurs de données dans des paires clé:valeur. Un dictionnaire est une collection ordonnée , modifiable et qui n'autorise pas les doublons (Depuis la version 3.7 de Python, les dictionnaires demeurent ordonnés. Dans les versions antérieures (Python 3.6 et moins), les dictionnaires ne sont pas ordonnés).
+# La communauté des développeurs de Python a réalisé plusieurs (PLUSIEURS !) modules qui effectuent beaucoup (BEAUCOUP !) de tâches. Pour cette raison, lors de la réalisation d'un programme on doit s'assurer qu'il n'existe pas déjà sous forme de module !
 # 
-# - Les dictionnaires sont écrits avec des accolades et ont des clés et des valeurs.  Pour creer un dictionnaire et l'affecter a une variable : 
-# ```python
-# var_dict = {cle_1: valeur_1, cle_2:valeur_2,...., cle_n:valeur_n}
-# ```
-# - Un dictionnaire vide est un dictionnaire qui contient 0 element ({} ou dict());
-# - Les dictionnaires sont **mutable**, on peut modifier leur contenu et leur taille.
+# La plupart de ces modules sont déjà installés dans les versions standards de Python. [Voici](https://docs.python.org/fr/3/py-modindex.html) une documentation sur les modules python.
 # 
+
+# ## Importation de modules
+# Nous pouvons importer un module qui existe déjà dans notre machine (installé ou crée par nous-même) via plusieurs manières.
+# 
+# Nous allons les illustrer avec l'exemple suivant : 
+# - le nombre $\pi =3.14...$ n'existe pas dans python,
+
+# In[1]:
+
+
+print(pi)
+
+
+# - Cependant, il existe un module appelé `math` qui contient ce nombre $\pi$: `pi`. D'ailleurs, le module math contient plusieurs fonctionnalités liées aux mathématiques. Voici plusieurs techniques pour utiliser les fonction (généralement les objets) d'un module (importation):
+
+# In[2]:
+
+
+# importer le module
+import math
+# utiliser le point après le nom du module puis l'objet que l'on veut dans ce module
+print(math.pi)
+
 
 # In[3]:
 
 
-# dictionnaire vide
-var = {} # ou var = dict()
-print(type(var))
-les_jours = {1:"lundi", 2:"mardi", 3:"mercredi", 4:"jeudi", 5:"vendredi", 6:"samedi", 7:"dimanche"}
-print(les_jours)
+# importer le module sous un nom que l'on veut et l'utiliser dans le reste du programme
+import math as m
+print(m.pi)
 
 
 # In[4]:
 
 
-les_jours2 = {}
+# importer un objet spécifique depuis le module. On ne va pas utiliser le point (comme math.pi)
+from math import pi
+print(pi)
 
-les_jours2[1] = 'lundi'
-les_jours2[2] = 'mardi'
-les_jours2[3] = 'mercredi'
-les_jours2[4] = 'jeudi'
-les_jours2[5] = 'vendredi'
-les_jours2[6] = 'samedi'
-les_jours2[7] = 'dimanche'
-
-print(les_jours2)
-
-
-# les cles et les valeurs peuvent etre de n'importe quel types de donnees. Par exemple on peut creer le dictionnaire suivant:
 
 # In[5]:
 
 
-les_jours3 = {}
-
-les_jours3['lundi'] = 1
-les_jours3['mardi'] = 2
-les_jours3['mercredi'] = 3
-les_jours3['jeudi'] = 4
-les_jours3['vendredi'] = 5
-les_jours3['samedi'] = 6
-les_jours3['dimanche'] = 7
-
-print(les_jours3)
+# importer un objet spécifique depuis le module sous un nom 
+# que l'on veut et l'utiliser dans le reste du programme
+from math import pi as le_nombre_pi
+print(le_nombre_pi)
 
 
-# Contrairment aux chaines de caracteres et aux listes, pour acceder a une valeur dans un dictionnaire nous deveons utiliser les cles. Par exemple, si nous voulons acceder a la valeur associee a la cle `jeudi` dans `les_jours3`, la maniere de le faire est la suivante:
+# In[6]:
+
+
+# importer plusieurs objets depuis le module
+from math import pi, sqrt # sqrt est un fonction dans math qui calcul la racine carrée d'un nombre
+print(sqrt(pi))
+
+
+# Finalement, on peut aussi faire :
+# ```python
+# # importer tous les éléments du module avec *
+# from math import *
+# print(pi)
+# ```
+# Mais il est déconseillé d'utiliser cette méthode pour ne pas avoir des chevauchement avec des objets dans un autre module.
+
+# Il existe une panoplie de modules que nous serons souvent amenés à utiliser en programmant en Python. Un échantillon est le suivant :
+# 
+# - `math` : plusieurs fonctions et constantes mathématiques de base (`sin`, `cos`, `exp`, $\pi$...).
+# - `sys` : interaction avec l'interpréteur Python.
+# - `os` : interaction avec le système d'exploitation.
+# - `random` : simulation et génération de nombres aléatoires.
+# - `numpy`: plusieurs fonctions mathématiques complètes, des générateurs de nombres aléatoires, veteurs, matrices, algèbre linéaire,...
+# - `matplotlib`: un module pour la visualisation des données.
+# - `time` : accès à l'heure de l'ordinateur et aux fonctions gérant le temps.
+# - `urllib` : récupération de données sur internet depuis Python.
+# - `re` : manipulation des expressions régulières.
+
+# ## Création d'un module
+# 
+# En Python, la création d'un module est simple. Il suffit d'écrire un ensemble de fonctions (et/ou de constantes) dans un fichier, puis d'enregistrer ce dernier avec une extension `.py`  Et voilà! Nous allons illustrer ça avec L'exemple suivant :
+# - nous allons créer un module simple que nous enregistrerons sous le nom `mon_module.py`
+# 
+# - le fichier `mon_module.py` contient le code suivant :
+# ```python
+# """L module suivant contient des fonctions pour 
+# addition, multiplication, soustraction et 
+# Une chaine de caractères"""
+# message = "bonjour tout le monde"
+# pi = 3.14
+# def addition(x, y):
+#     """Cette fonction fait permet de 
+#     claculer la somme de deux nombres"""
+#     return x+y  
+# def multip(x, y):
+#     """Cette fonction fait permet de 
+#     claculer la multiplication de deux nombres"""
+#     return x*y
+# def soustra(x,y):
+#     """Cette fonction fait permet de 
+#     claculer la soustraction de deux nombres"""
+#     return x-y
+# ```
+
+# Pour importer ce fichier, nous allons utiliser `import`:
+
+# In[7]:
+
+
+import mon_module
+
+
+# Nous pouvons maintenant utiliser toute les fonctions et constantes dans ce module. Pour savoir les composante de ce module, on peut utiliser la fonction `help()`.
+# 
+# _NB: Les chaînes de caractères entre triple guillemets `""" """` en tête du module et en tête de chaque fonction sont facultatives mais elles jouent néanmoins un rôle essentiel dans la documentation du code.
 
 # In[8]:
 
 
-print(les_jours3['jeudi'])
+print(help(mon_module))
 
 
-# Les dictionnaires ne peuvent pas avoir des cles dupliqee (les valeurs peuvent etre dupliquees). En effet, les valeurs en double écraseront les valeurs existantes. Illustrons ca avec l'exemple suivant:
+# Les chaines de caractères susmentionné sont dites `docstrings` (chaînes de documentation). Ces `docstrings` (comme nous nous avons vu dans `help(mon_module)`) permettent notamment de fournir de l'aide lorsqu'on invoque la commande `help()`.
+# Pour utiliser une fonction dans le module `mon_module`, on procède comme dans le cas des modules qui existent déjà dans python (comme `math` que nous avons vu). Supposons que nous voulons utiliser les fonctions `addtion`, `multip`, et `soustra` qui existe dans `code1` pour les valeurs 5 et 10 et nous voulons utiliser la constante `pi ` :
+# 
+
+# In[9]:
+
+
+print(mon_module.addition(5, 10))
+print(mon_module.multip(5, 10))
+print(mon_module.soustra(5, 10))
+print(mon_module.pi)
+
+
+# ## Bonnes pratiques en programmation Python
+# Les bonnes pratiques en programmation Python sont résumées dans un module qui s'appelle `this`. Nous allons l'importer.
 
 # In[10]:
 
 
-les_jours4 = {}
+import this
 
-les_jours4['lundi'] = 0
-les_jours4['mardi'] = 1
-les_jours4['mardi'] = 2
-les_jours4['mercredi'] = 3
-les_jours4['jeudi'] = 4
-les_jours4['vendredi'] = 5
-les_jours4['samedi'] = 6
-les_jours4['dimanche'] = 7
-
-print(les_jours4)
-
-
-# In[11]:
-
-
-les_jours5 = {}
-
-les_jours5['lundi'] = 0
-les_jours5['mardi'] = 0
-les_jours5['mercredi'] = 0
-les_jours5['jeudi'] = 5
-les_jours5['vendredi'] = 0
-les_jours5['samedi'] = 0
-les_jours5['dimanche'] = 0
-
-print(les_jours5)
-
-
-# ## Operations sur les dictionnaires
-# 
-# Python possède un ensemble de méthodes intégrées que nous pouvons utiliser pour manipuler les dictionnaires:
-# 
-# | Methode       | Description                                                                                                 |
-# |--------------|-------------------------------------------------------------------------------------------------------------|
-# | clear()      | Supprime tous les éléments du dictionnaire                                                                |
-# | copy()       | Renvoie une copie du dictionnaire                                                                            |
-# | fromkeys()   | Renvoie un dictionnaire avec les clés et la valeur spécifiées                                                      |
-# | get()        | Renvoie la valeur de la clé spécifiée                                                                      |
-# | items()      | Renvoie une liste contenant un tuple pour chaque paire clé-valeur                                                   |
-# | keys()       | Retourne une liste contenant les clés du dictionnaire                                                             |
-# | pop()        | Supprime l'élément avec la clé spécifiée                                                                  |
-# | popitem()    | Supprime la dernière paire clé-valeur insérée                                                                   |
-# | setdefault() | Renvoie la valeur de la clé spécifiée. Si la clé n'existe pas : insérez la clé, avec la valeur spécifiée |
-# | update()     | Met à jour le dictionnaire avec les paires clé-valeur spécifiées                                                   |
-# | values()     | Renvoie une liste de toutes les valeurs du dictionnaire                                                         |
-
-# In[46]:
-
-
-# clear
-les_jours.clear()
-
-print(les_jours)
-
-
-# In[47]:
-
-
-# copy
-les_jours2_copie = les_jours2.copy()
-
-print(les_jours2_copie)
-
-
-# In[48]:
-
-
-# fromkeys
-# creer un dictionnaire avec des cles mais pas de valeurs (None)
-
-cles = range(6)
-dict_vide = dict.fromkeys(cles)
-print(dict_vide)
-
-
-# In[49]:
-
-
-# fromkeys
-# creer un dictionnaire avec des cles a la meme valeur
-var = ['a', 'e', 'i', 'o', 'u', 'y']
-valeur = 'voyelle'
-dict_voyelles = dict.fromkeys(var, valeur)
-
-print(dict_voyelles)
-
-
-# In[50]:
-
-
-# get
-print(les_jours2.get(3))
-
-
-# In[51]:
-
-
-# items
-print(les_jours2.items())
-
-
-# In[54]:
-
-
-# keys
-print(les_jours2.keys())
-
-
-# In[55]:
-
-
-# values
-print(les_jours2.values())
-
-
-# In[56]:
-
-
-# pop
-les_jours2.pop(4)
-
-print(les_jours2)
-
-
-# In[58]:
-
-
-# popitem 
-# inserer une cles-valeur arbitraire
-les_jours2['la dirniere cles ajoutee'] = 'La valeur associee a la derniere cles'
-
-print(les_jours2)
-
-
-# In[59]:
-
-
-# popitem
-les_jours2.popitem()
-
-print(les_jours2)
-
-
-# In[61]:
-
-
-# setdefault()
-# si la cles existe
-print(les_jours2.setdefault(1, "LUNDI"))
-# pusique la cles existe, la valeur ne va pas changer. Elle va etre affichee. Le dictionnaire ne va pas changer aussi.
-print(les_jours2)
-
-
-# In[62]:
-
-
-# setdefault()
-# si la cles existe
-# puisque la cles 4 n'existe pas. La valeur 'mercredi' va etre affichee. Le dictionnaire va etre modifie aussi
-print(les_jours2.setdefault(4, "mercredi"))
-print(les_jours2)
-
-
-# In[ ]:
-
-
-# update
-premier
-
-
-# La fonction intégrée `len()` est aussi appliquable pour les dictionnaires. Si l'on désire déterminer le nombre d'elements:
-
-# In[13]:
-
-
-len(les_jours)
-
-
-# La varaible `les_jours` contient 7 elements.
-
-# Si l'on veut tester l'appartenece d'un element a une liste/tuple on utilise l'operateur `in`. L'expression est la suivante : `element in liste`. Cela nous renvoi `True` si `element`est dans `liste`, sinon `False`. On peut aussi ecrire `element not in liste` pour tester si l'element n'est pas dans `liste` (`True`) ou s'il est dans `liste` (`False`). Voici quelques exemples:
-
-# In[15]:
-
-
-les_jours
-
-
-# In[21]:
-
-
-les_jours.values()
-
-
-# In[23]:
-
-
-un_tuple = (1, 'bonjour', 4.5, True)
-
-print(1 in un_tuple)
-
-print(2 in un_tuple)
-
-print('o' not in un_tuple)
-
-print('x' not in un_tuple)
-
-
-# ## Quelle est la difference entre listes et tuples?
-# 
-# Les listes et les tuples sont pareils dans la plupart des contextes. Cepandant, la difference primordiale entre les deux et que les listes sont des **objets mutables** (modifiables) alors que les tuples sont des **objets immuables** (ne sont pas modifiable). La question qui se pose est donc: qu'est-ce qu'un objet mutable et un objet immuable?
-# Parmi les objet immuable en python, on trouve:
-# - Les nombres entiers (int)
-# - Les nombres décimaux (float)
-# - Les chaînes de caractères (str)
-# - Les booléens (bool)
-# - Les tuples (tuple)
-# La plus part des autres objets que vous allez confronter en python sont mutables.
-# 
-# Nous allons illustre ca dans les exemples suivant:
-# 1. nous allons creer les variables suivantes:
-# - `var_chaine = "bonjour tout le monde"`, 
-# - `var_liste = [1, 2, True, 'bonjour']`,
-# - `var_tuple = (1, 2, True, 'bonjour')`.
-# 2. nous qllons essayer de changer (par exemple) le premier element de chaque variable (par un autre element).
-
-# In[26]:
-
-
-var_chaine = "bonjour tout le monde"
-var_liste = [1, 2, True, 'bonjour']
-var_tuple = (1, 2, True, 'bonjour')
-
-
-# In[29]:
-
-
-var_chaine[0] = 'B'
-print(var_chaine)
-
-
-# In[30]:
-
-
-var_liste[0] = 3333
-print(var_liste)
-
-
-# In[31]:
-
-
-var_tuple[0] = 3333
-print(var_tuple)
-
-
-# Les listes ont une taille variable, les tuples et les chaines de caracteres ont une taille fixe. Enfin, les listes ont plus de fonctionnalités que les tuples. Cependant, c'est le contexte qui nous force a utiliser les listes ou les tuples. Nous allons rencontrer plusieurs contextes ou on est amener a choisir l'un des deux types.
-
-# ## quelques methodes utiles pour les listes et les tuples
-# Dans cette sections nous allons voir qulques `methodes`  pour les liste et/ou les tuples (les methodes communes et les methodes propres aux listes seulement). Les deux methodes suivantes sont communes aux listes et au tuples:
-# - count: cette methode est utlisee pour compter le nombre d'elements de la liste/tuple.
-# - index: cette method est utilisee pour chercher une valeur spécifiée dans la liste/tuple et renvoie la position de l'endroit où il a été trouvé.
-
-# In[53]:
-
-
-var_liste = [1, 2, 2, True, 'bonjour', 2]
-var_tuple = (1, 2, 2, True, 'bonjour', 2)
-
-print(var_liste.count(2)) ## print(var_tuple.count(2))
-
-print(var_tuple.index(2))  ## print(var_tuple.index(2))
-
-
-# In[48]:
-
-
-var_tuple.index(44) # var_tuple.index(44)
-
-
-# In[57]:
-
-
-
-
-
-# Les methodes decrites dans la table suivante sont appliquee au lites seulement:
-# 
-# 
-# | Méthode    | Description                                                                  |
-# |-----------|------------------------------------------------------------------------------|
-# | append()  | Ajoute un élément en fin de liste                                       |
-# | clear()   | Supprime tous les éléments de la liste                                       |
-# | copy()    | Renvoie une copie de la liste                                                   |
-# | count()   | Renvoie le nombre d'éléments avec la valeur spécifiée                      |
-# | extend()  | Ajouter les éléments d'une liste, à la fin de la liste actuelle |
-# | index()   | Renvoie l'indice du premier élément avec la valeur spécifiée              |
-# | insert()  | Ajoute un élément à la position spécifiée                                   |
-# | pop()     | Supprime l'élément à la position spécifiée                                |
-# | remove()  | Supprime le premier élément avec la valeur spécifiée                              |
-# | reverse() | Inverse l'ordre de la liste                                               |
-# | sort()    | Trie la liste                                                               |
-
-# In[ ]:
-
-
-
-
-
-# ## sets
-# 
-# On a vu que les chaines de caracteres, les liste et tuples sont des sequences ordonnees d'elements
-# 
-# 
-# 

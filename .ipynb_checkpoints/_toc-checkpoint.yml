@@ -25,3 +25,7 @@
     - file: ch6
     - file: ch7
     - file: exo4
+- file: content5
+  sections:
+    - file: ch8
+    - file: exo5

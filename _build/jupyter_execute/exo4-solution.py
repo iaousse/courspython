@@ -152,7 +152,7 @@ print(tan(pi))
 # 2. tester pour 10 expériences si le nombre dans le premier dés égale au nombre dans le deuxième de.
 # 3. calculer les probabilités pour 1, 10, 20, 100, 1000, 5000, 10000 et 100000 expériences.
 
-# In[7]:
+# In[15]:
 
 
 import generateur

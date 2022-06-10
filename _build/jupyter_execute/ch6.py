@@ -3,388 +3,239 @@
 
 # # Les fonctions
 # 
-# ## Dictionnaire (dictionnary)
+# ## Définition d'une fonction (`function`)
 # 
-# Contrairment au objets construits que nous avons vu (`strings`, `lists`, `tuples`), les dictionnaires (`dictionnary`) sont utilisés pour stocker des valeurs de données dans des paires clé:valeur. Un dictionnaire est une collection ordonnée , modifiable et qui n'autorise pas les doublons (Depuis la version 3.7 de Python, les dictionnaires demeurent ordonnés. Dans les versions antérieures (Python 3.6 et moins), les dictionnaires ne sont pas ordonnés).
+# Une fonction est un bloc de code qui ne s'exécute que lorsqu'elle est appelée. Nous pouvons transmettre des données, appelées paramètres, dans une fonction. Elle peut renvoyer des données en conséquence.
 # 
-# - Les dictionnaires sont écrits avec des accolades et ont des clés et des valeurs.  Pour creer un dictionnaire et l'affecter a une variable : 
+# Nous avons rencontré plusieurs fonction dites `built-in functions` telles que, `print()`, `input()`,  `len()`, `sum()`, ... Il s'agit en fait d'un ensemble d'instruction qui servent à réaliser une tache (déterminer la taille d'une liste, sommer les éléments d'une liste,...)
+
+# ## Création d'une fonction
+# 
+# En Python, une fonction est définie à l'aide du mot-clé `def` :
+# 
+# Ls syntaxe pour créer une fonction est la suivante :
+# 
 # ```python
-# var_dict = {cle_1: valeur_1, cle_2:valeur_2,...., cle_n:valeur_n}
+# def une_fonction(arguments):
+#     instructions
+#     return donnees (eventuellement)
 # ```
-# - Un dictionnaire vide est un dictionnaire qui contient 0 element ({} ou dict());
-# - Les dictionnaires sont **mutable**, on peut modifier leur contenu et leur taille.
+# 
+# Voici une fonction qui ne renvoie aucune données mais il affiche un message :
 # 
 
-# In[3]:
+# In[38]:
 
 
-# dictionnaire vide
-var = {} # ou var = dict()
-print(type(var))
-les_jours = {1:"lundi", 2:"mardi", 3:"mercredi", 4:"jeudi", 5:"vendredi", 6:"samedi", 7:"dimanche"}
-print(les_jours)
+# création d'une fonction sans arguments sans return
+def hello_world_function():
+    print("hello world!")
+          
+# création d'une fonction avec arguments sans return
+def bonjour_function(nom):
+    print("Bonjour "+nom)
+          
+# création d'une fonction sans argument avec return
+def cinq():
+          return 5
+          
+# création d'une fonction avec argument avec return
+def caree(nombre):
+    return nombre**2
 
 
-# In[4]:
+# In[2]:
 
 
-les_jours2 = {}
+print(hello_world_function())
 
-les_jours2[1] = 'lundi'
-les_jours2[2] = 'mardi'
-les_jours2[3] = 'mercredi'
-les_jours2[4] = 'jeudi'
-les_jours2[5] = 'vendredi'
-les_jours2[6] = 'samedi'
-les_jours2[7] = 'dimanche'
+print(bonjour_function("iaousse"))
 
-print(les_jours2)
+print(cinq()+3)
+print(caree(15))
 
 
-# les cles et les valeurs peuvent etre de n'importe quel types de donnees. Par exemple on peut creer le dictionnaire suivant:
+# ## Fonctions et procédures
+# Les fonctions et les procédures ont la même syntaxe ; on les distingue de la manière suivante :
+# - Une fonction prend des arguments et retourne une valeur ;
+# - Une procédure réalise une action : affichage, écriture d'un fichier, ouverture d'une fenêtre graphique, modification d'un objet... Ces changements perdurent après l'appel de la procédure. Elle retourne la valeur `None`. Par exemple, la fonction `hello_world_function` est en fait une procédure.
+
+# In[36]:
+
+
+var = hello_world_function()
+print(var)
+
+
+# ## Arguments -- Paramètres
+# 
+# Les termes paramètres et argument peuvent être utilisés pour la même chose : des informations transmises à une fonction.
+# 
+# Cependant, du point de vue d'une fonction :
+# 
+# - Un paramètre est la variable répertoriée entre parenthèses dans la définition de la fonction.
+# 
+# - Un argument est la valeur qui est envoyée à la fonction lorsqu'elle est appelée.
+# 
+
+# In[39]:
+
+
+def multip(x, y): # ici, x et y sont des paramètres de la fonction
+    return x*y
+
+x, y = 10, 5 # ici x et y sont des arguments qui doivent être passés à la fonction
+
+print(multip(x, y))
+
+
+# Lorsqu'on définit une fonction `def fonction(x, y):` les arguments x et y sont appelés `arguments positionnels` (`positional arguments`). Il est strictement obligatoire de les préciser lors de l'appel de la fonction (telle qu la fonction `multip` definie ci-dessus). En effet, si une fonction attend deux arguments et nous ne lui en passons qu'un seul. Un message d'erreur et afficher :
 
 # In[5]:
 
 
-les_jours3 = {}
-
-les_jours3['lundi'] = 1
-les_jours3['mardi'] = 2
-les_jours3['mercredi'] = 3
-les_jours3['jeudi'] = 4
-les_jours3['vendredi'] = 5
-les_jours3['samedi'] = 6
-les_jours3['dimanche'] = 7
-
-print(les_jours3)
+a = 5
+print(multip(a))
 
 
-# Contrairment aux chaines de caracteres et aux listes, pour acceder a une valeur dans un dictionnaire nous deveons utiliser les cles. Par exemple, si nous voulons acceder a la valeur associee a la cle `jeudi` dans `les_jours3`, la maniere de le faire est la suivante:
+# En plus, l'ordre des arguments doit être respecter dans la fonction, nous allons illustrer ça avec la fonction suivante :
 
-# In[8]:
-
-
-print(les_jours3['jeudi'])
+# In[40]:
 
 
-# Les dictionnaires ne peuvent pas avoir des cles dupliqee (les valeurs peuvent etre dupliquees). En effet, les valeurs en double écraseront les valeurs existantes. Illustrons ca avec l'exemple suivant:
+def soustra(x, y):
+    return x-y
+
+# le premier argument est 5 le deuxième est 4
+print(soustra(5, 4))
+# le premier argument est 4 le deuxième est 5
+print(soustra(4, 5))
+# le premier argument est 5 le deuxième est 4
+print(soustra(y=4, x = 5))
+
+
+# Un argument défini avec une syntaxe `def fonction(arg=val):` est appelé `argument par mot-clé` (`keyword argument`). Le passage d'un tel argument lors de l'appel de la fonction est facultatif.
 
 # In[10]:
 
 
-les_jours4 = {}
+def multip1(x, y=1):
+    return x*y
 
-les_jours4['lundi'] = 0
-les_jours4['mardi'] = 1
-les_jours4['mardi'] = 2
-les_jours4['mercredi'] = 3
-les_jours4['jeudi'] = 4
-les_jours4['vendredi'] = 5
-les_jours4['samedi'] = 6
-les_jours4['dimanche'] = 7
+print(multip1(5, 10))
+print(multip1(5))
 
-print(les_jours4)
-
-
-# In[11]:
-
-
-les_jours5 = {}
-
-les_jours5['lundi'] = 0
-les_jours5['mardi'] = 0
-les_jours5['mercredi'] = 0
-les_jours5['jeudi'] = 5
-les_jours5['vendredi'] = 0
-les_jours5['samedi'] = 0
-les_jours5['dimanche'] = 0
-
-print(les_jours5)
-
-
-# ## Operations sur les dictionnaires
-# 
-# Python possède un ensemble de méthodes intégrées que nous pouvons utiliser pour manipuler les dictionnaires:
-# 
-# | Methode       | Description                                                                                                 |
-# |--------------|-------------------------------------------------------------------------------------------------------------|
-# | clear()      | Supprime tous les éléments du dictionnaire                                                                |
-# | copy()       | Renvoie une copie du dictionnaire                                                                            |
-# | fromkeys()   | Renvoie un dictionnaire avec les clés et la valeur spécifiées                                                      |
-# | get()        | Renvoie la valeur de la clé spécifiée                                                                      |
-# | items()      | Renvoie une liste contenant un tuple pour chaque paire clé-valeur                                                   |
-# | keys()       | Retourne une liste contenant les clés du dictionnaire                                                             |
-# | pop()        | Supprime l'élément avec la clé spécifiée                                                                  |
-# | popitem()    | Supprime la dernière paire clé-valeur insérée                                                                   |
-# | setdefault() | Renvoie la valeur de la clé spécifiée. Si la clé n'existe pas : insérez la clé, avec la valeur spécifiée |
-# | update()     | Met à jour le dictionnaire avec les paires clé-valeur spécifiées                                                   |
-# | values()     | Renvoie une liste de toutes les valeurs du dictionnaire                                                         |
-
-# In[46]:
-
-
-# clear
-les_jours.clear()
-
-print(les_jours)
-
-
-# In[47]:
-
-
-# copy
-les_jours2_copie = les_jours2.copy()
-
-print(les_jours2_copie)
-
-
-# In[48]:
-
-
-# fromkeys
-# creer un dictionnaire avec des cles mais pas de valeurs (None)
-
-cles = range(6)
-dict_vide = dict.fromkeys(cles)
-print(dict_vide)
-
-
-# In[49]:
-
-
-# fromkeys
-# creer un dictionnaire avec des cles a la meme valeur
-var = ['a', 'e', 'i', 'o', 'u', 'y']
-valeur = 'voyelle'
-dict_voyelles = dict.fromkeys(var, valeur)
-
-print(dict_voyelles)
-
-
-# In[50]:
-
-
-# get
-print(les_jours2.get(3))
-
-
-# In[51]:
-
-
-# items
-print(les_jours2.items())
-
-
-# In[54]:
-
-
-# keys
-print(les_jours2.keys())
-
-
-# In[55]:
-
-
-# values
-print(les_jours2.values())
-
-
-# In[56]:
-
-
-# pop
-les_jours2.pop(4)
-
-print(les_jours2)
-
-
-# In[58]:
-
-
-# popitem 
-# inserer une cles-valeur arbitraire
-les_jours2['la dirniere cles ajoutee'] = 'La valeur associee a la derniere cles'
-
-print(les_jours2)
-
-
-# In[59]:
-
-
-# popitem
-les_jours2.popitem()
-
-print(les_jours2)
-
-
-# In[61]:
-
-
-# setdefault()
-# si la cles existe
-print(les_jours2.setdefault(1, "LUNDI"))
-# pusique la cles existe, la valeur ne va pas changer. Elle va etre affichee. Le dictionnaire ne va pas changer aussi.
-print(les_jours2)
-
-
-# In[62]:
-
-
-# setdefault()
-# si la cles existe
-# puisque la cles 4 n'existe pas. La valeur 'mercredi' va etre affichee. Le dictionnaire va etre modifie aussi
-print(les_jours2.setdefault(4, "mercredi"))
-print(les_jours2)
-
-
-# In[ ]:
-
-
-# update
-premier
-
-
-# La fonction intégrée `len()` est aussi appliquable pour les dictionnaires. Si l'on désire déterminer le nombre d'elements:
-
-# In[13]:
-
-
-len(les_jours)
-
-
-# La varaible `les_jours` contient 7 elements.
-
-# Si l'on veut tester l'appartenece d'un element a une liste/tuple on utilise l'operateur `in`. L'expression est la suivante : `element in liste`. Cela nous renvoi `True` si `element`est dans `liste`, sinon `False`. On peut aussi ecrire `element not in liste` pour tester si l'element n'est pas dans `liste` (`True`) ou s'il est dans `liste` (`False`). Voici quelques exemples:
 
 # In[15]:
 
 
-les_jours
+def multip1(x=5, y=2):
+    return x*y
 
+print(multip1(5, 10))
+print(multip1())
+
+
+# Les arguments par mot-clé sont pris dans l'ordre dans lesquels on les passe lors de l'appel. 
+
+# In[16]:
+
+
+print(multip1(5)) # ici x qui prend la valeur 5
+
+
+# Si l'on souhaite préciser l'argument par mot-clé `y` et garder la valeur de `x` par défaut, on doit simplement préciser le nom de l'argument lors de l'appel :
+
+# In[17]:
+
+
+print(multip1(5)) # ici x qui prend la valeur 5
+print(multip1(y=5)) # ici y qui prend la valeur 5
+
+
+# Python permet même de rentrer les arguments par mot-clé dans un ordre arbitraire. On peut aussi avoir un mélange d'`arguments positionnels` et `par mot-clé`. Mais, **les arguments positionnels doivent toujours être placés avant les arguments par mot-clé** :
 
 # In[21]:
 
 
-les_jours.values()
+def soustr2(y=1, x=5):
+    return x-y
+print(soustr2(x=5, y=10))
+print(soustr2(y=5, x=10))
 
 
-# In[23]:
+# In[25]:
 
 
-un_tuple = (1, 'bonjour', 4.5, True)
+def fonction(a, b, c, d=100, e=200):
+    return a , b, c, d, e
 
-print(1 in un_tuple)
+print(fonction(1, 1, 1, 1, 1))
 
-print(2 in un_tuple)
-
-print('o' not in un_tuple)
-
-print('x' not in un_tuple)
+print(fonction(1, 1, 1))
 
 
-# ## Quelle est la difference entre listes et tuples?
+# In[27]:
+
+
+def fonction(d=100, e=200, a, b, c):
+    return a , b, c, d, e
+
+print(fonction(1, 1, 1, 1, 1))
+
+print(fonction(1, 1, 1))
+
+
+# ## Variables locales et variables globales
 # 
-# Les listes et les tuples sont pareils dans la plupart des contextes. Cepandant, la difference primordiale entre les deux et que les listes sont des **objets mutables** (modifiables) alors que les tuples sont des **objets immuables** (ne sont pas modifiable). La question qui se pose est donc: qu'est-ce qu'un objet mutable et un objet immuable?
-# Parmi les objet immuable en python, on trouve:
-# - Les nombres entiers (int)
-# - Les nombres décimaux (float)
-# - Les chaînes de caractères (str)
-# - Les booléens (bool)
-# - Les tuples (tuple)
-# La plus part des autres objets que vous allez confronter en python sont mutables.
+# Lorsqu'on manipule des fonctions, il est essentiel de bien comprendre comment se comportent les variables. Une variable est dite `locale` lorsqu'elle est créée dans une fonction. Elle n'existera et ne sera visible que lors de l'exécution de ladite fonction.
 # 
-# Nous allons illustre ca dans les exemples suivant:
-# 1. nous allons creer les variables suivantes:
-# - `var_chaine = "bonjour tout le monde"`, 
-# - `var_liste = [1, 2, True, 'bonjour']`,
-# - `var_tuple = (1, 2, True, 'bonjour')`.
-# 2. nous qllons essayer de changer (par exemple) le premier element de chaque variable (par un autre element).
-
-# In[26]:
-
-
-var_chaine = "bonjour tout le monde"
-var_liste = [1, 2, True, 'bonjour']
-var_tuple = (1, 2, True, 'bonjour')
-
-
-# In[29]:
-
-
-var_chaine[0] = 'B'
-print(var_chaine)
-
-
-# In[30]:
-
-
-var_liste[0] = 3333
-print(var_liste)
-
-
-# In[31]:
-
-
-var_tuple[0] = 3333
-print(var_tuple)
-
-
-# Les listes ont une taille variable, les tuples et les chaines de caracteres ont une taille fixe. Enfin, les listes ont plus de fonctionnalités que les tuples. Cependant, c'est le contexte qui nous force a utiliser les listes ou les tuples. Nous allons rencontrer plusieurs contextes ou on est amener a choisir l'un des deux types.
-
-# ## quelques methodes utiles pour les listes et les tuples
-# Dans cette sections nous allons voir qulques `methodes`  pour les liste et/ou les tuples (les methodes communes et les methodes propres aux listes seulement). Les deux methodes suivantes sont communes aux listes et au tuples:
-# - count: cette methode est utlisee pour compter le nombre d'elements de la liste/tuple.
-# - index: cette method est utilisee pour chercher une valeur spécifiée dans la liste/tuple et renvoie la position de l'endroit où il a été trouvé.
-
-# In[53]:
-
-
-var_liste = [1, 2, 2, True, 'bonjour', 2]
-var_tuple = (1, 2, 2, True, 'bonjour', 2)
-
-print(var_liste.count(2)) ## print(var_tuple.count(2))
-
-print(var_tuple.index(2))  ## print(var_tuple.index(2))
-
-
-# In[48]:
-
-
-var_tuple.index(44) # var_tuple.index(44)
-
-
-# In[57]:
-
-
-
-
-
-# Les methodes decrites dans la table suivante sont appliquee au lites seulement:
+# Une variable est dite `globale` lorsqu'elle est créée dans le programme principal. Elle sera visible partout dans le programme.
 # 
+# Voici un exemple illustratif:
+
+# In[43]:
+
+
+# Un espace de la mémoire nommé Global frame est alloue au programme principal
+def addition(a, b):
+    # un espace des variables est alloué à la fonction une fois elle est appelée
+    c = a+ b # c, a et b sont des variables locales
+    return c
+x, y = 1, 3 # x et y sont des variables globales 
+z = addition(x, y) # z est une variable globale
+# Lorsque Python quitte la fonction, l'espace des variables alloué à la fonction est détruit. 
+# Toutes les variables créées dans la fonction n'existent plus.
+print(z)
+
+
+# In[44]:
+
+
+print(c) # Python ne va pas reconnaitre cette variable car elle n'existe pas dans Global frame
+
+
+# ## Fonctions récursives
 # 
-# | Méthode    | Description                                                                  |
-# |-----------|------------------------------------------------------------------------------|
-# | append()  | Ajoute un élément en fin de liste                                       |
-# | clear()   | Supprime tous les éléments de la liste                                       |
-# | copy()    | Renvoie une copie de la liste                                                   |
-# | count()   | Renvoie le nombre d'éléments avec la valeur spécifiée                      |
-# | extend()  | Ajouter les éléments d'une liste, à la fin de la liste actuelle |
-# | index()   | Renvoie l'indice du premier élément avec la valeur spécifiée              |
-# | insert()  | Ajoute un élément à la position spécifiée                                   |
-# | pop()     | Supprime l'élément à la position spécifiée                                |
-# | remove()  | Supprime le premier élément avec la valeur spécifiée                              |
-# | reverse() | Inverse l'ordre de la liste                                               |
-# | sort()    | Trie la liste                                                               |
+# Une simple définition d'une `fonction récursive` est une fonction qui contient au moins un appel à elle-même. Un `langage récursif` est un langage dans lequel on peut programmer des fonctions récursives. Python est un langage récursif. Un simple exemple pour exploiter les fonctions récursives est le calcul des puissances de deux : $2^n$.
 
-# In[ ]:
+# In[37]:
 
 
+def puissances_de_deux(n):
+    if n == 0:
+        return 1
+    else:
+        return 2*puissances_de_deux(n-1)
+    
+print(puissances_de_deux(4))
 
 
-
-# ## sets
-# 
-# On a vu que les chaines de caracteres, les liste et tuples sont des sequences ordonnees d'elements
-# 
-# 
+# ```{warning}
+# Pour s'assurer de la terminaison d'une fonction récursive, on doit respecter les règles suivantes :
+# - La fonction doit contenir un ou plusieurs cas de base ne comportant pas d'appel récursif.
+# Dans la fonction puissances_de_deux : c'est le cas $n = 0$.
+# - Les appels de la fonction se font des arguments plus simples pour conduire aux cas de base
+# Dans l'appel de puissances_de_deux(n) : les arguments successifs sont $n − 1 > n − 2 > · · · > 0$.
+# ```
 # 
