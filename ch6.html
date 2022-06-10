@@ -50,6 +50,8 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Les modules" href="ch7.html" />
@@ -211,29 +213,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exo4.html">
-     Essayez vous-meme!
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="content5.html">
-   Gestion des exceptions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ch8.html">
-     Les execptions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="exo5.html">
-     Essayez vous-meme!
+     Essayez vous-même !
     </a>
    </li>
   </ul>
@@ -346,28 +326,39 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictionnaire-dictionnary">
-   Dictionnaire (dictionnary)
+  <a class="reference internal nav-link" href="#definition-d-une-fonction-function">
+   Définition d’une fonction (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     function
+    </span>
+   </code>
+   )
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operations-sur-les-dictionnaires">
-   Operations sur les dictionnaires
+  <a class="reference internal nav-link" href="#creation-d-une-fonction">
+   Création d’une fonction
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quelle-est-la-difference-entre-listes-et-tuples">
-   Quelle est la difference entre listes et tuples?
+  <a class="reference internal nav-link" href="#fonctions-et-procedures">
+   Fonctions et procédures
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quelques-methodes-utiles-pour-les-listes-et-les-tuples">
-   quelques methodes utiles pour les listes et les tuples
+  <a class="reference internal nav-link" href="#arguments-parametres">
+   Arguments – Paramètres
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sets">
-   sets
+  <a class="reference internal nav-link" href="#variables-locales-et-variables-globales">
+   Variables locales et variables globales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fonctions-recursives">
+   Fonctions récursives
   </a>
  </li>
 </ul>
@@ -383,85 +374,291 @@
                 
   <div class="section" id="les-fonctions">
 <h1>Les fonctions<a class="headerlink" href="#les-fonctions" title="Lien permanent vers ce titre">¶</a></h1>
-<div class="section" id="dictionnaire-dictionnary">
-<h2>Dictionnaire (dictionnary)<a class="headerlink" href="#dictionnaire-dictionnary" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Contrairment au objets construits que nous avons vu (<code class="docutils literal notranslate"><span class="pre">strings</span></code>, <code class="docutils literal notranslate"><span class="pre">lists</span></code>, <code class="docutils literal notranslate"><span class="pre">tuples</span></code>), les dictionnaires (<code class="docutils literal notranslate"><span class="pre">dictionnary</span></code>) sont utilisés pour stocker des valeurs de données dans des paires clé:valeur. Un dictionnaire est une collection ordonnée , modifiable et qui n’autorise pas les doublons (Depuis la version 3.7 de Python, les dictionnaires demeurent ordonnés. Dans les versions antérieures (Python 3.6 et moins), les dictionnaires ne sont pas ordonnés).</p>
+<div class="section" id="definition-d-une-fonction-function">
+<h2>Définition d’une fonction (<code class="docutils literal notranslate"><span class="pre">function</span></code>)<a class="headerlink" href="#definition-d-une-fonction-function" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une fonction est un bloc de code qui ne s’exécute que lorsqu’elle est appelée. Nous pouvons transmettre des données, appelées paramètres, dans une fonction. Elle peut renvoyer des données en conséquence.</p>
+<p>Nous avons rencontré plusieurs fonction dites <code class="docutils literal notranslate"><span class="pre">built-in</span> <span class="pre">functions</span></code> telles que, <code class="docutils literal notranslate"><span class="pre">print()</span></code>, <code class="docutils literal notranslate"><span class="pre">input()</span></code>,  <code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">sum()</span></code>, … Il s’agit en fait d’un ensemble d’instruction qui servent à réaliser une tache (déterminer la taille d’une liste, sommer les éléments d’une liste,…)</p>
+</div>
+<div class="section" id="creation-d-une-fonction">
+<h2>Création d’une fonction<a class="headerlink" href="#creation-d-une-fonction" title="Lien permanent vers ce titre">¶</a></h2>
+<p>En Python, une fonction est définie à l’aide du mot-clé <code class="docutils literal notranslate"><span class="pre">def</span></code> :</p>
+<p>Ls syntaxe pour créer une fonction est la suivante :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">une_fonction</span><span class="p">(</span><span class="n">arguments</span><span class="p">):</span>
+    <span class="n">instructions</span>
+    <span class="k">return</span> <span class="n">donnees</span> <span class="p">(</span><span class="n">eventuellement</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici une fonction qui ne renvoie aucune données mais il affiche un message :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># création d&#39;une fonction sans arguments sans return</span>
+<span class="k">def</span> <span class="nf">hello_world_function</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+          
+<span class="c1"># création d&#39;une fonction avec arguments sans return</span>
+<span class="k">def</span> <span class="nf">bonjour_function</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour &quot;</span><span class="o">+</span><span class="n">nom</span><span class="p">)</span>
+          
+<span class="c1"># création d&#39;une fonction sans argument avec return</span>
+<span class="k">def</span> <span class="nf">cinq</span><span class="p">():</span>
+          <span class="k">return</span> <span class="mi">5</span>
+          
+<span class="c1"># création d&#39;une fonction avec argument avec return</span>
+<span class="k">def</span> <span class="nf">caree</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">nombre</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">hello_world_function</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">bonjour_function</span><span class="p">(</span><span class="s2">&quot;iaousse&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">cinq</span><span class="p">()</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caree</span><span class="p">(</span><span class="mi">15</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world!
+None
+Bonjour iaousse
+None
+8
+225
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fonctions-et-procedures">
+<h2>Fonctions et procédures<a class="headerlink" href="#fonctions-et-procedures" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les fonctions et les procédures ont la même syntaxe ; on les distingue de la manière suivante :</p>
 <ul class="simple">
-<li><p>Les dictionnaires sont écrits avec des accolades et ont des clés et des valeurs.  Pour creer un dictionnaire et l’affecter a une variable :</p></li>
+<li><p>Une fonction prend des arguments et retourne une valeur ;</p></li>
+<li><p>Une procédure réalise une action : affichage, écriture d’un fichier, ouverture d’une fenêtre graphique, modification d’un objet… Ces changements perdurent après l’appel de la procédure. Elle retourne la valeur <code class="docutils literal notranslate"><span class="pre">None</span></code>. Par exemple, la fonction <code class="docutils literal notranslate"><span class="pre">hello_world_function</span></code> est en fait une procédure.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">cle_1</span><span class="p">:</span> <span class="n">valeur_1</span><span class="p">,</span> <span class="n">cle_2</span><span class="p">:</span><span class="n">valeur_2</span><span class="p">,</span><span class="o">....</span><span class="p">,</span> <span class="n">cle_n</span><span class="p">:</span><span class="n">valeur_n</span><span class="p">}</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="n">hello_world_function</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello world!
+None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="arguments-parametres">
+<h2>Arguments – Paramètres<a class="headerlink" href="#arguments-parametres" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les termes paramètres et argument peuvent être utilisés pour la même chose : des informations transmises à une fonction.</p>
+<p>Cependant, du point de vue d’une fonction :</p>
 <ul class="simple">
-<li><p>Un dictionnaire vide est un dictionnaire qui contient 0 element ({} ou dict());</p></li>
-<li><p>Les dictionnaires sont <strong>mutable</strong>, on peut modifier leur contenu et leur taille.</p></li>
+<li><p>Un paramètre est la variable répertoriée entre parenthèses dans la définition de la fonction.</p></li>
+<li><p>Un argument est la valeur qui est envoyée à la fonction lorsqu’elle est appelée.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dictionnaire vide</span>
-<span class="n">var</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># ou var = dict()</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
-<span class="n">les_jours</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">&quot;lundi&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s2">&quot;mardi&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="s2">&quot;mercredi&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span><span class="s2">&quot;jeudi&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">:</span><span class="s2">&quot;vendredi&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">:</span><span class="s2">&quot;samedi&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span><span class="s2">&quot;dimanche&quot;</span><span class="p">}</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="c1"># ici, x et y sont des paramètres de la fonction</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span> <span class="c1"># ici x et y sont des arguments qui doivent être passés à la fonction</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;dict&#39;&gt;
-{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 4: &#39;jeudi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lorsqu’on définit une fonction <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">fonction(x,</span> <span class="pre">y):</span></code> les arguments x et y sont appelés <code class="docutils literal notranslate"><span class="pre">arguments</span> <span class="pre">positionnels</span></code> (<code class="docutils literal notranslate"><span class="pre">positional</span> <span class="pre">arguments</span></code>). Il est strictement obligatoire de les préciser lors de l’appel de la fonction (telle qu la fonction <code class="docutils literal notranslate"><span class="pre">multip</span></code> definie ci-dessus). En effet, si une fonction attend deux arguments et nous ne lui en passons qu’un seul. Un message d’erreur et afficher :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multip</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_12724</span>\<span class="mf">3267011078.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">multip</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: multip() missing 1 required positional argument: &#39;y&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>En plus, l’ordre des arguments doit être respecter dans la fonction, nous allons illustrer ça avec la fonction suivante :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">soustra</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span>
+
+<span class="c1"># le premier argument est 5 le deuxième est 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soustra</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># le premier argument est 4 le deuxième est 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soustra</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1"># le premier argument est 5 le deuxième est 4</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soustra</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+-1
+1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Un argument défini avec une syntaxe <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">fonction(arg=val):</span></code> est appelé <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">par</span> <span class="pre">mot-clé</span></code> (<code class="docutils literal notranslate"><span class="pre">keyword</span> <span class="pre">argument</span></code>). Le passage d’un tel argument lors de l’appel de la fonction est facultatif.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multip1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+5
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours2</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multip1</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
 
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;lundi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mardi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mercredi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;jeudi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;vendredi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;samedi&#39;</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;dimanche&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 4: &#39;jeudi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>50
+10
 </pre></div>
 </div>
 </div>
 </div>
-<p>les cles et les valeurs peuvent etre de n’importe quel types de donnees. Par exemple on peut creer le dictionnaire suivant:</p>
+<p>Les arguments par mot-clé sont pris dans l’ordre dans lesquels on les passe lors de l’appel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours3</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;lundi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;mardi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;mercredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;jeudi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;vendredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;samedi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;dimanche&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># ici x qui prend la valeur 5</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lundi&#39;: 1, &#39;mardi&#39;: 2, &#39;mercredi&#39;: 3, &#39;jeudi&#39;: 4, &#39;vendredi&#39;: 5, &#39;samedi&#39;: 6, &#39;dimanche&#39;: 7}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
 </div>
-<p>Contrairment aux chaines de caracteres et aux listes, pour acceder a une valeur dans un dictionnaire nous deveons utiliser les cles. Par exemple, si nous voulons acceder a la valeur associee a la cle <code class="docutils literal notranslate"><span class="pre">jeudi</span></code> dans <code class="docutils literal notranslate"><span class="pre">les_jours3</span></code>, la maniere de le faire est la suivante:</p>
+<p>Si l’on souhaite préciser l’argument par mot-clé <code class="docutils literal notranslate"><span class="pre">y</span></code> et garder la valeur de <code class="docutils literal notranslate"><span class="pre">x</span></code> par défaut, on doit simplement préciser le nom de l’argument lors de l’appel :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">les_jours3</span><span class="p">[</span><span class="s1">&#39;jeudi&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># ici x qui prend la valeur 5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multip1</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># ici y qui prend la valeur 5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+25
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python permet même de rentrer les arguments par mot-clé dans un ordre arbitraire. On peut aussi avoir un mélange d”<code class="docutils literal notranslate"><span class="pre">arguments</span> <span class="pre">positionnels</span></code> et <code class="docutils literal notranslate"><span class="pre">par</span> <span class="pre">mot-clé</span></code>. Mais, <strong>les arguments positionnels doivent toujours être placés avant les arguments par mot-clé</strong> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">soustr2</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soustr2</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soustr2</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-5
+5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fonction</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mi">200</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fonction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fonction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 1, 1, 1, 1)
+(1, 1, 1, 100, 200)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fonction</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fonction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fonction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;C:\Users\usr\AppData\Local\Temp\ipykernel_12724\231190923.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="k">def</span> <span class="nf">fonction</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+                <span class="o">^</span>
+<span class="ne">SyntaxError</span>: non-default argument follows default argument
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variables-locales-et-variables-globales">
+<h2>Variables locales et variables globales<a class="headerlink" href="#variables-locales-et-variables-globales" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsqu’on manipule des fonctions, il est essentiel de bien comprendre comment se comportent les variables. Une variable est dite <code class="docutils literal notranslate"><span class="pre">locale</span></code> lorsqu’elle est créée dans une fonction. Elle n’existera et ne sera visible que lors de l’exécution de ladite fonction.</p>
+<p>Une variable est dite <code class="docutils literal notranslate"><span class="pre">globale</span></code> lorsqu’elle est créée dans le programme principal. Elle sera visible partout dans le programme.</p>
+<p>Voici un exemple illustratif:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Un espace de la mémoire nommé Global frame est alloue au programme principal</span>
+<span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="c1"># un espace des variables est alloué à la fonction une fois elle est appelée</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span> <span class="n">b</span> <span class="c1"># c, a et b sont des variables locales</span>
+    <span class="k">return</span> <span class="n">c</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="c1"># x et y sont des variables globales </span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">addition</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="c1"># z est une variable globale</span>
+<span class="c1"># Lorsque Python quitte la fonction, l&#39;espace des variables alloué à la fonction est détruit. </span>
+<span class="c1"># Toutes les variables créées dans la fonction n&#39;existent plus.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -471,546 +668,55 @@
 </div>
 </div>
 </div>
-<p>Les dictionnaires ne peuvent pas avoir des cles dupliqee (les valeurs peuvent etre dupliquees). En effet, les valeurs en double écraseront les valeurs existantes. Illustrons ca avec l’exemple suivant:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours4</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;lundi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;mardi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;mardi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;mercredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;jeudi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;vendredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;samedi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="n">les_jours4</span><span class="p">[</span><span class="s1">&#39;dimanche&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours4</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lundi&#39;: 0, &#39;mardi&#39;: 2, &#39;mercredi&#39;: 3, &#39;jeudi&#39;: 4, &#39;vendredi&#39;: 5, &#39;samedi&#39;: 6, &#39;dimanche&#39;: 7}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours5</span> <span class="o">=</span> <span class="p">{}</span>
-
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;lundi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;mardi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;mercredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;jeudi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;vendredi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;samedi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">les_jours5</span><span class="p">[</span><span class="s1">&#39;dimanche&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;lundi&#39;: 0, &#39;mardi&#39;: 0, &#39;mercredi&#39;: 0, &#39;jeudi&#39;: 5, &#39;vendredi&#39;: 0, &#39;samedi&#39;: 0, &#39;dimanche&#39;: 0}
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="operations-sur-les-dictionnaires">
-<h2>Operations sur les dictionnaires<a class="headerlink" href="#operations-sur-les-dictionnaires" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Python possède un ensemble de méthodes intégrées que nous pouvons utiliser pour manipuler les dictionnaires:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Methode</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>clear()</p></td>
-<td><p>Supprime tous les éléments du dictionnaire</p></td>
-</tr>
-<tr class="row-odd"><td><p>copy()</p></td>
-<td><p>Renvoie une copie du dictionnaire</p></td>
-</tr>
-<tr class="row-even"><td><p>fromkeys()</p></td>
-<td><p>Renvoie un dictionnaire avec les clés et la valeur spécifiées</p></td>
-</tr>
-<tr class="row-odd"><td><p>get()</p></td>
-<td><p>Renvoie la valeur de la clé spécifiée</p></td>
-</tr>
-<tr class="row-even"><td><p>items()</p></td>
-<td><p>Renvoie une liste contenant un tuple pour chaque paire clé-valeur</p></td>
-</tr>
-<tr class="row-odd"><td><p>keys()</p></td>
-<td><p>Retourne une liste contenant les clés du dictionnaire</p></td>
-</tr>
-<tr class="row-even"><td><p>pop()</p></td>
-<td><p>Supprime l’élément avec la clé spécifiée</p></td>
-</tr>
-<tr class="row-odd"><td><p>popitem()</p></td>
-<td><p>Supprime la dernière paire clé-valeur insérée</p></td>
-</tr>
-<tr class="row-even"><td><p>setdefault()</p></td>
-<td><p>Renvoie la valeur de la clé spécifiée. Si la clé n’existe pas : insérez la clé, avec la valeur spécifiée</p></td>
-</tr>
-<tr class="row-odd"><td><p>update()</p></td>
-<td><p>Met à jour le dictionnaire avec les paires clé-valeur spécifiées</p></td>
-</tr>
-<tr class="row-even"><td><p>values()</p></td>
-<td><p>Renvoie une liste de toutes les valeurs du dictionnaire</p></td>
-</tr>
-</tbody>
-</table>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># clear</span>
-<span class="n">les_jours</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># copy</span>
-<span class="n">les_jours2_copie</span> <span class="o">=</span> <span class="n">les_jours2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2_copie</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 4: &#39;jeudi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fromkeys</span>
-<span class="c1"># creer un dictionnaire avec des cles mais pas de valeurs (None)</span>
-
-<span class="n">cles</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="n">dict_vide</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">cles</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">dict_vide</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: None, 1: None, 2: None, 3: None, 4: None, 5: None}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fromkeys</span>
-<span class="c1"># creer un dictionnaire avec des cles a la meme valeur</span>
-<span class="n">var</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]</span>
-<span class="n">valeur</span> <span class="o">=</span> <span class="s1">&#39;voyelle&#39;</span>
-<span class="n">dict_voyelles</span> <span class="o">=</span> <span class="nb">dict</span><span class="o">.</span><span class="n">fromkeys</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">dict_voyelles</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: &#39;voyelle&#39;, &#39;e&#39;: &#39;voyelle&#39;, &#39;i&#39;: &#39;voyelle&#39;, &#39;o&#39;: &#39;voyelle&#39;, &#39;u&#39;: &#39;voyelle&#39;, &#39;y&#39;: &#39;voyelle&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mercredi
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># items</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(1, &#39;lundi&#39;), (2, &#39;mardi&#39;), (3, &#39;mercredi&#39;), (4, &#39;jeudi&#39;), (5, &#39;vendredi&#39;), (6, &#39;samedi&#39;), (7, &#39;dimanche&#39;)])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keys</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([1, 2, 3, 4, 5, 6, 7])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;lundi&#39;, &#39;mardi&#39;, &#39;mercredi&#39;, &#39;jeudi&#39;, &#39;vendredi&#39;, &#39;samedi&#39;, &#39;dimanche&#39;])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pop</span>
-<span class="n">les_jours2</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># popitem </span>
-<span class="c1"># inserer une cles-valeur arbitraire</span>
-<span class="n">les_jours2</span><span class="p">[</span><span class="s1">&#39;la dirniere cles ajoutee&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;La valeur associee a la derniere cles&#39;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;, &#39;la dirniere cles ajoutee&#39;: &#39;La valeur associee a la derniere cles&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># popitem</span>
-<span class="n">les_jours2</span><span class="o">.</span><span class="n">popitem</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setdefault()</span>
-<span class="c1"># si la cles existe</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;LUNDI&quot;</span><span class="p">))</span>
-<span class="c1"># pusique la cles existe, la valeur ne va pas changer. Elle va etre affichee. Le dictionnaire ne va pas changer aussi.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lundi
-{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setdefault()</span>
-<span class="c1"># si la cles existe</span>
-<span class="c1"># puisque la cles 4 n&#39;existe pas. La valeur &#39;mercredi&#39; va etre affichee. Le dictionnaire va etre modifie aussi</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;mercredi&quot;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">les_jours2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mercredi
-{1: &#39;lundi&#39;, 2: &#39;mardi&#39;, 3: &#39;mercredi&#39;, 5: &#39;vendredi&#39;, 6: &#39;samedi&#39;, 7: &#39;dimanche&#39;, 4: &#39;mercredi&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># update</span>
-<span class="n">premier</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>La fonction intégrée <code class="docutils literal notranslate"><span class="pre">len()</span></code> est aussi appliquable pour les dictionnaires. Si l’on désire déterminer le nombre d’elements:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">les_jours</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
-<p>La varaible <code class="docutils literal notranslate"><span class="pre">les_jours</span></code> contient 7 elements.</p>
-<p>Si l’on veut tester l’appartenece d’un element a une liste/tuple on utilise l’operateur <code class="docutils literal notranslate"><span class="pre">in</span></code>. L’expression est la suivante : <code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">in</span> <span class="pre">liste</span></code>. Cela nous renvoi <code class="docutils literal notranslate"><span class="pre">True</span></code> si <code class="docutils literal notranslate"><span class="pre">element</span></code>est dans <code class="docutils literal notranslate"><span class="pre">liste</span></code>, sinon <code class="docutils literal notranslate"><span class="pre">False</span></code>. On peut aussi ecrire <code class="docutils literal notranslate"><span class="pre">element</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">liste</span></code> pour tester si l’element n’est pas dans <code class="docutils literal notranslate"><span class="pre">liste</span></code> (<code class="docutils literal notranslate"><span class="pre">True</span></code>) ou s’il est dans <code class="docutils literal notranslate"><span class="pre">liste</span></code> (<code class="docutils literal notranslate"><span class="pre">False</span></code>). Voici quelques exemples:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1: &#39;lundi&#39;,
- 2: &#39;mardi&#39;,
- 3: &#39;mercredi&#39;,
- 4: &#39;jeudi&#39;,
- 5: &#39;vendredi&#39;,
- 6: &#39;samedi&#39;,
- 7: &#39;dimanche&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">les_jours</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;lundi&#39;, &#39;mardi&#39;, &#39;mercredi&#39;, &#39;jeudi&#39;, &#39;vendredi&#39;, &#39;samedi&#39;, &#39;dimanche&#39;])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">un_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">un_tuple</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">un_tuple</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;o&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">un_tuple</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">un_tuple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-False
-True
-True
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="quelle-est-la-difference-entre-listes-et-tuples">
-<h2>Quelle est la difference entre listes et tuples?<a class="headerlink" href="#quelle-est-la-difference-entre-listes-et-tuples" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Les listes et les tuples sont pareils dans la plupart des contextes. Cepandant, la difference primordiale entre les deux et que les listes sont des <strong>objets mutables</strong> (modifiables) alors que les tuples sont des <strong>objets immuables</strong> (ne sont pas modifiable). La question qui se pose est donc: qu’est-ce qu’un objet mutable et un objet immuable?
-Parmi les objet immuable en python, on trouve:</p>
-<ul class="simple">
-<li><p>Les nombres entiers (int)</p></li>
-<li><p>Les nombres décimaux (float)</p></li>
-<li><p>Les chaînes de caractères (str)</p></li>
-<li><p>Les booléens (bool)</p></li>
-<li><p>Les tuples (tuple)
-La plus part des autres objets que vous allez confronter en python sont mutables.</p></li>
-</ul>
-<p>Nous allons illustre ca dans les exemples suivant:</p>
-<ol class="simple">
-<li><p>nous allons creer les variables suivantes:</p></li>
-</ol>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">var_chaine</span> <span class="pre">=</span> <span class="pre">&quot;bonjour</span> <span class="pre">tout</span> <span class="pre">le</span> <span class="pre">monde&quot;</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">var_liste</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">True,</span> <span class="pre">'bonjour']</span></code>,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">var_tuple</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">True,</span> <span class="pre">'bonjour')</span></code>.</p></li>
-</ul>
-<ol class="simple">
-<li><p>nous qllons essayer de changer (par exemple) le premier element de chaque variable (par un autre element).</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_chaine</span> <span class="o">=</span> <span class="s2">&quot;bonjour tout le monde&quot;</span>
-<span class="n">var_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">]</span>
-<span class="n">var_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_chaine</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Python ne va pas reconnaitre cette variable car elle n&#39;existe pas dans Global frame</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_232</span>\<span class="mf">4274672008.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">var_chaine</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_chaine</span><span class="p">)</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_12724</span>\<span class="mf">954765826.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Python ne va pas reconnaitre cette variable car elle n&#39;existe pas dans Global frame</span>
 
-<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+<span class="ne">NameError</span>: name &#39;c&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="fonctions-recursives">
+<h2>Fonctions récursives<a class="headerlink" href="#fonctions-recursives" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Une simple définition d’une <code class="docutils literal notranslate"><span class="pre">fonction</span> <span class="pre">récursive</span></code> est une fonction qui contient au moins un appel à elle-même. Un <code class="docutils literal notranslate"><span class="pre">langage</span> <span class="pre">récursif</span></code> est un langage dans lequel on peut programmer des fonctions récursives. Python est un langage récursif. Un simple exemple pour exploiter les fonctions récursives est le calcul des puissances de deux : <span class="math notranslate nohighlight">\(2^n\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3333</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_liste</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">puissances_de_deux</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">puissances_de_deux</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">puissances_de_deux</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3333, 2, True, &#39;bonjour&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3333</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">var_tuple</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_232</span>\<span class="mf">613115800.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">var_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3333</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">var_tuple</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
-</pre></div>
-</div>
-</div>
-</div>
-<p>Les listes ont une taille variable, les tuples et les chaines de caracteres ont une taille fixe. Enfin, les listes ont plus de fonctionnalités que les tuples. Cependant, c’est le contexte qui nous force a utiliser les listes ou les tuples. Nous allons rencontrer plusieurs contextes ou on est amener a choisir l’un des deux types.</p>
-</div>
-<div class="section" id="quelques-methodes-utiles-pour-les-listes-et-les-tuples">
-<h2>quelques methodes utiles pour les listes et les tuples<a class="headerlink" href="#quelques-methodes-utiles-pour-les-listes-et-les-tuples" title="Lien permanent vers ce titre">¶</a></h2>
-<p>Dans cette sections nous allons voir qulques <code class="docutils literal notranslate"><span class="pre">methodes</span></code>  pour les liste et/ou les tuples (les methodes communes et les methodes propres aux listes seulement). Les deux methodes suivantes sont communes aux listes et au tuples:</p>
+<div class="admonition warning">
+<p class="admonition-title">Avertissement</p>
+<p>Pour s’assurer de la terminaison d’une fonction récursive, on doit respecter les règles suivantes :</p>
 <ul class="simple">
-<li><p>count: cette methode est utlisee pour compter le nombre d’elements de la liste/tuple.</p></li>
-<li><p>index: cette method est utilisee pour chercher une valeur spécifiée dans la liste/tuple et renvoie la position de l’endroit où il a été trouvé.</p></li>
+<li><p>La fonction doit contenir un ou plusieurs cas de base ne comportant pas d’appel récursif.
+Dans la fonction puissances_de_deux : c’est le cas <span class="math notranslate nohighlight">\(n = 0\)</span>.</p></li>
+<li><p>Les appels de la fonction se font des arguments plus simples pour conduire aux cas de base
+Dans l’appel de puissances_de_deux(n) : les arguments successifs sont <span class="math notranslate nohighlight">\(n − 1 &gt; n − 2 &gt; · · · &gt; 0\)</span>.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">var_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;bonjour&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">var_liste</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1">## print(var_tuple.count(2))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">var_tuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1">## print(var_tuple.index(2))</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var_tuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span> <span class="c1"># var_tuple.index(44)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span>\<span class="n">ipykernel_232</span>\<span class="mf">1993419995.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">var_tuple</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">44</span><span class="p">)</span> <span class="c1"># var_tuple.index(44)</span>
-
-<span class="ne">ValueError</span>: tuple.index(x): x not in tuple
-</pre></div>
-</div>
-</div>
-</div>
-<p>Les methodes decrites dans la table suivante sont appliquee au lites seulement:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Méthode</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>append()</p></td>
-<td><p>Ajoute un élément en fin de liste</p></td>
-</tr>
-<tr class="row-odd"><td><p>clear()</p></td>
-<td><p>Supprime tous les éléments de la liste</p></td>
-</tr>
-<tr class="row-even"><td><p>copy()</p></td>
-<td><p>Renvoie une copie de la liste</p></td>
-</tr>
-<tr class="row-odd"><td><p>count()</p></td>
-<td><p>Renvoie le nombre d’éléments avec la valeur spécifiée</p></td>
-</tr>
-<tr class="row-even"><td><p>extend()</p></td>
-<td><p>Ajouter les éléments d’une liste, à la fin de la liste actuelle</p></td>
-</tr>
-<tr class="row-odd"><td><p>index()</p></td>
-<td><p>Renvoie l’indice du premier élément avec la valeur spécifiée</p></td>
-</tr>
-<tr class="row-even"><td><p>insert()</p></td>
-<td><p>Ajoute un élément à la position spécifiée</p></td>
-</tr>
-<tr class="row-odd"><td><p>pop()</p></td>
-<td><p>Supprime l’élément à la position spécifiée</p></td>
-</tr>
-<tr class="row-even"><td><p>remove()</p></td>
-<td><p>Supprime le premier élément avec la valeur spécifiée</p></td>
-</tr>
-<tr class="row-odd"><td><p>reverse()</p></td>
-<td><p>Inverse l’ordre de la liste</p></td>
-</tr>
-<tr class="row-even"><td><p>sort()</p></td>
-<td><p>Trie la liste</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="sets">
-<h2>sets<a class="headerlink" href="#sets" title="Lien permanent vers ce titre">¶</a></h2>
-<p>On a vu que les chaines de caracteres, les liste et tuples sont des sequences ordonnees d’elements</p>
 </div>
 </div>
 
@@ -1052,7 +758,6 @@ La plus part des autres objets que vous allez confronter en python sont mutables
         
           Par Iaousse M'barek<br/>
         
-            &copy; droits d'auteur 2020.<br/>
       </p>
     </div>
   </footer>
